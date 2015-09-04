@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibrusWP", "LibrusWP\LibrusWP.csproj", "{2C658B1D-CA96-4156-B9C0-8CD0F89BA293}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibrusWP.Tests", "LibrusWP.Tests\LibrusWP.Tests.csproj", "{B3CDE423-9FD9-4631-BA48-66910C9BEB2D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C658B1D-CA96-4156-B9C0-8CD0F89BA293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C658B1D-CA96-4156-B9C0-8CD0F89BA293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C658B1D-CA96-4156-B9C0-8CD0F89BA293}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2C658B1D-CA96-4156-B9C0-8CD0F89BA293}.Debug|ARM.ActiveCfg = Debug|ARM
+		{2C658B1D-CA96-4156-B9C0-8CD0F89BA293}.Debug|ARM.Build.0 = Debug|ARM
+		{2C658B1D-CA96-4156-B9C0-8CD0F89BA293}.Debug|ARM.Deploy.0 = Debug|ARM
+		{2C658B1D-CA96-4156-B9C0-8CD0F89BA293}.Debug|x86.ActiveCfg = Debug|x86
+		{2C658B1D-CA96-4156-B9C0-8CD0F89BA293}.Debug|x86.Build.0 = Debug|x86
+		{2C658B1D-CA96-4156-B9C0-8CD0F89BA293}.Debug|x86.Deploy.0 = Debug|x86
+		{2C658B1D-CA96-4156-B9C0-8CD0F89BA293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C658B1D-CA96-4156-B9C0-8CD0F89BA293}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C658B1D-CA96-4156-B9C0-8CD0F89BA293}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2C658B1D-CA96-4156-B9C0-8CD0F89BA293}.Release|ARM.ActiveCfg = Release|ARM
+		{2C658B1D-CA96-4156-B9C0-8CD0F89BA293}.Release|ARM.Build.0 = Release|ARM
+		{2C658B1D-CA96-4156-B9C0-8CD0F89BA293}.Release|ARM.Deploy.0 = Release|ARM
+		{2C658B1D-CA96-4156-B9C0-8CD0F89BA293}.Release|x86.ActiveCfg = Release|x86
+		{2C658B1D-CA96-4156-B9C0-8CD0F89BA293}.Release|x86.Build.0 = Release|x86
+		{2C658B1D-CA96-4156-B9C0-8CD0F89BA293}.Release|x86.Deploy.0 = Release|x86
+		{B3CDE423-9FD9-4631-BA48-66910C9BEB2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3CDE423-9FD9-4631-BA48-66910C9BEB2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3CDE423-9FD9-4631-BA48-66910C9BEB2D}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{B3CDE423-9FD9-4631-BA48-66910C9BEB2D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B3CDE423-9FD9-4631-BA48-66910C9BEB2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3CDE423-9FD9-4631-BA48-66910C9BEB2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3CDE423-9FD9-4631-BA48-66910C9BEB2D}.Release|ARM.ActiveCfg = Release|Any CPU
+		{B3CDE423-9FD9-4631-BA48-66910C9BEB2D}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
