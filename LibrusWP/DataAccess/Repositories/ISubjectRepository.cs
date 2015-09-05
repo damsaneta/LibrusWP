@@ -1,4 +1,5 @@
-﻿using LibrusWP.Model;
+﻿using LibrusWP.DataAccess.Entities;
+using LibrusWP.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,10 @@ namespace LibrusWP.DataAccess
 {
     public interface ISubjectRepository
     {
-        List<Model.SubjectModel> GetAll();
+        List<SubjectEntity> GetAll();
 
-        void AddNew(SubjectModel model);
+        void AddNew(SubjectEntity model);
 
-        Model.SubjectModel GetById(string id);
+        SubjectEntity GetById(string id);
     }
 }

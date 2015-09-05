@@ -1,4 +1,5 @@
-﻿using LibrusWP.Model;
+﻿using LibrusWP.DataAccess.Entities;
+using LibrusWP.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,8 @@ namespace LibrusWP.DataAccess
 {
     public interface IClassRepository
     {
-        List<ClassModel> GetAll();
-        void AddNew(ClassModel clazz);
-        ClassModel GetById(string id);
+        List<ClassEntity> GetAll();
+        void AddNew(ClassEntity clazz);
+        ClassEntity GetById(string id);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using LibrusWP.DataAccess;
+using LibrusWP.DataAccess.Entities;
 using LibrusWP.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -13,14 +14,15 @@ namespace LibrusWP.Tests
     [TestClass]
     public class ClassRepositoryTests
     {
-        private readonly string connString = @"Data Source=D:\Users\aneta\Desktop\LibrusWP\LibrusWP.Tests\Databases\TestDatabase.sqlite;Version=3";
+        private readonly string connString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\aneta\Documents\LibrusWP.mdf;Integrated Security=True;Connect Timeout=30";
 
         [TestMethod]
         public void Add_new_class_test()
         {
-            this.SetupAll();
+           // this.SetupAll();
+            
             var repo = new ClassRepository(connString);
-            var model = new ClassModel("GR1");
+            var model = new ClassEntity("GR1");
 
             repo.AddNew(model);
         }
@@ -28,10 +30,10 @@ namespace LibrusWP.Tests
         [TestMethod]
         public void Get_all_classes_test()
         {
-            this.SetupAll();
+            //this.SetupAll();
             var repo = new ClassRepository(connString);
-            var model = new ClassModel("GR2");
-            var model2 = new ClassModel("GR1");
+            var model = new ClassEntity("GR2");
+            var model2 = new ClassEntity("GR1");
 
             repo.AddNew(model);
             repo.AddNew(model2);
@@ -46,10 +48,10 @@ namespace LibrusWP.Tests
         [TestMethod]
         public void Get_class_by_id_test()
         {
-            this.SetupAll();
+            //this.SetupAll();
             var repo = new ClassRepository(connString);
-            var model = new ClassModel("GR2");
-            var model2 = new ClassModel("GR1");
+            var model = new ClassEntity("GR2");
+            var model2 = new ClassEntity("GR1");
 
             repo.AddNew(model);
             repo.AddNew(model2);

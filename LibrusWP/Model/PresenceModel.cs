@@ -31,9 +31,7 @@ namespace LibrusWP.Model
         public TimeTableModel TimeTable { get; private set; }
 
         public DateTime Date { get; private set; }
-     //   public SubjectModel Subject { get; private set; }
 
-       // public DateTime Date { get; private set; }
 
         public bool Present
         {

@@ -1,4 +1,5 @@
 ﻿using LibrusWP.DataAccess;
+using LibrusWP.DataAccess.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace LibrusWP.Logic
     public static class LibrusFactory
     {
         private static ILibrusManager librusManager;
-        private static string ConnectionString = "";
+        private static LibrusDataContext ConnectionString = null;
         private static IClassRepository classRepository;
         private static ISubjectRepository subjectRepository;
         private static ITimeTableRepository timeTableRepository;
@@ -40,7 +41,7 @@ namespace LibrusWP.Logic
         {
             if(presenceRepository == null)
             {
-                presenceRepository = new PresenceRepository(ConnectionString);
+               // presenceRepository = new PresenceRepository(ConnectionString);
             }
 
             return presenceRepository;
@@ -50,7 +51,7 @@ namespace LibrusWP.Logic
         {
             if(studentRepository == null)
             {
-                studentRepository = new StudentRepository(ConnectionString, CreateClassRepository());
+                //studentRepository = new StudentRepository(ConnectionString, CreateClassRepository());
             }
 
             return studentRepository;
@@ -60,7 +61,7 @@ namespace LibrusWP.Logic
         {
             if(subjectRepository == null)
             {
-                subjectRepository = new SubjectRepository(LibrusFactory.ConnectionString);
+               // subjectRepository = new SubjectRepository(LibrusFactory.ConnectionString);
             }
 
             return subjectRepository;
@@ -71,7 +72,7 @@ namespace LibrusWP.Logic
         {
             if(timeTableRepository == null)
             {
-                timeTableRepository = new TimeTableRepository(LibrusFactory.ConnectionString, CreateSubjectRepository(), CreateClassRepository());
+                //timeTableRepository = new TimeTableRepository(LibrusFactory.ConnectionString, CreateSubjectRepository(), CreateClassRepository());
             }
             return timeTableRepository;
         }

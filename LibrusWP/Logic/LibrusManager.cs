@@ -1,4 +1,5 @@
 ﻿using LibrusWP.DataAccess;
+using LibrusWP.DataAccess.Entities;
 using LibrusWP.Model;
 using System;
 using System.Collections.Generic;
@@ -28,60 +29,77 @@ namespace LibrusWP.Logic
 
         public List<Model.ClassModel> GetAllClasses()
         {
-            return this.classRepository.GetAll();
+            IList<ClassEntity> all = this.classRepository.GetAll();
+            var result = all.Select(x => new ClassModel(x.Id)).ToList();
+            return result;
         }
 
         public List<Model.SubjectModel> GetAllSubjects()
         {
-            return this.subjectRepository.GetAll();
+            IList<SubjectEntity> all = this.subjectRepository.GetAll();
+            var result = all.Select(x => new SubjectModel(x.Id, x.Name)).ToList();
+            return result;
         }
-
+        // TO DO
         public IList<SubjectModel> GetSubjectsForClass(ClassModel selectedClass)
         {
-            var timeTables = this.timeTableRepository.GetAllByClass(selectedClass.Id);
-            return timeTables.Select(x => x.Subject).ToList();
+           
+            //var timeTables = this.timeTableRepository.GetAllByClass(selectedClass.Id);
+            //return timeTables.Select(x => x.Subject).ToList();
+            return null;
         }
 
         public SubjectModel GetSubjectById(string id)
         {
-            return this.subjectRepository.GetById(id);
+            SubjectEntity subject = this.subjectRepository.GetById(id);
+            return new SubjectModel(subject.Id, subject.Name);
         }
 
         public ClassModel GetClassById(string id)
         {
-            return this.classRepository.GetById(id);
+            ClassEntity clazz = this.classRepository.GetById(id);
+            return new ClassModel(clazz.Id);
+        }
+        // TO DO
+        public IList<StudentModel> GetStudentsByClass(string id)
+        {
+            //return this.studentRepository.GetAllByClass(id);
+            return null;
         }
 
-        public IList<Model.StudentModel> GetStudentsByClass(string id)
+        //TODO
+        public TimeTableModel GetTimeTable(Model.ClassModel clazz, Model.SubjectModel subject)
         {
-            return this.studentRepository.GetAllByClass(id);
-        }
-
-        public Model.TimeTableModel GetTimeTable(Model.ClassModel clazz, Model.SubjectModel subject)
-        {
-            return this.timeTableRepository.GetByClassAndSubject(clazz.Id, subject.Id);
+            return null;
+           // return this.timeTableRepository.GetByClassAndSubject(clazz.Id, subject.Id);
         }
   
-        public Model.StudentModel GetStudentById(int id)
+        public StudentModel GetStudentById(int id)
         {
-            return this.studentRepository.GetById(id);
+            // TO DO: dodać klasę, zamiast nulla
+            StudentEntity student = this.studentRepository.GetById(id); 
+            return new StudentModel(student.Id, student.Name, student.Surname, null, student.Gender);
+            
         }
-
-        public IList<Model.PresenceModel> GetPresencesByStudentAndSubject(string studentId, string SubjectId)
+        //TODO
+        public IList<Model.PresenceModel> GetPresencesByStudentAndSubject(string studentId, string subjectId)
         {
-            return this.presenceRepository.GetAllByStudentAndSubject(studentId, SubjectId);
+            this.presenceRepository.GetAllByStudentAndSubject(studentId, subjectId);
+            return null;
+            
         }
-
-        public Model.TimeTableModel GetTimeTableById(int timetableId)
+        //TODO
+        public TimeTableModel GetTimeTableById(int timetableId)
         {
-            return this.timeTableRepository.GetById(timetableId);
+            TimeTableEntity timetable = this.timeTableRepository.GetById(timetableId);
+            return null;
         }
-
+        //TODO
         public IList<Model.PresenceModel> GetPresencesByStudentsSubjectDate(IList<Model.StudentModel> students, Model.SubjectModel subjectModel, DateTime dateTime)
         {
             throw new NotImplementedException();
         }
-
+        //TODO
         public void SavePresences(IList<Model.PresenceModel> list)
         {
             throw new NotImplementedException();
