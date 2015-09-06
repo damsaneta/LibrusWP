@@ -39,23 +39,47 @@ namespace LibrusWP.UnitTestsWP
         public void Add_new_presence_test()
         {
             var repo = new PresenceRepository(this.context);
-            var model = new PresenceEntity(DateTime.Now.Date.Date, true);
-            repo.AddNew(model);
+            var studrepo = new StudentRepository(this.context);
+            var timerepo = new TimeTableRepository(this.context);
+            var classrepo = new ClassRepository(this.context);
+            var subrepo = new SubjectRepository(this.context);
+            ClassEntity clazz = new ClassEntity("GR1");
+            classrepo.AddNew(clazz);
+            StudentEntity model = new StudentEntity("Aneta", "Dams", clazz,true);
+            studrepo.AddNew(model);
+            SubjectEntity subject = new SubjectEntity("AM", "Analiza Matematyczna");
+            subrepo.AddNew(subject);
+            TimeTableEntity timeTable = new TimeTableEntity("poniedziałek",clazz, subject);
+            var model1 = new PresenceEntity(model, timeTable, DateTime.Now.Date, true);
+            repo.AddNew(model1);
         }
 
         [TestMethod]
-        public void Get_all_presences_test()
+        public void Get_presences_by_student_and_subject_test()
         {
             var repo = new PresenceRepository(this.context);
-            var model = new PresenceEntity(DateTime.Now.Date.Date, true);
-            var model2 = new PresenceEntity(DateTime.Now.Date.Date, false);
-            repo.AddNew(model);
+            var studrepo = new StudentRepository(this.context);
+            var timerepo = new TimeTableRepository(this.context);
+            var classrepo = new ClassRepository(this.context);
+            var subrepo = new SubjectRepository(this.context);
+            ClassEntity clazz = new ClassEntity("GR1");
+            classrepo.AddNew(clazz);
+            StudentEntity model = new StudentEntity("Aneta", "Dams", clazz, true);
+            studrepo.AddNew(model);
+            SubjectEntity subject = new SubjectEntity("AM", "Analiza Matematyczna");
+            subrepo.AddNew(subject);
+            TimeTableEntity timeTable = new TimeTableEntity("poniedziałek", clazz, subject);
+            var model1 = new PresenceEntity(model, timeTable, DateTime.Now.Date, true);
+            var model2 = new PresenceEntity(model, timeTable, DateTime.Now.Date.AddDays(2), true);
+            repo.AddNew(model1);
             repo.AddNew(model2);
 
-            var result = repo.GetAll();
+            var result= repo.GetAllByStudentAndSubject(model.Id, subject.Id);
+
+            Assert.IsNotNull(result);
             Assert.AreEqual(2, result.Count);
-            Assert.AreEqual(1, model.Id);
-            Assert.AreEqual(2, model2.Id);
+            Assert.AreEqual(model1.Id, result[0].Id);
+            Assert.AreEqual(model2.Id, result[1].Id);
 
         }
 

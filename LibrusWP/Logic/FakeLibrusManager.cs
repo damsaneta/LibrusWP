@@ -767,9 +767,9 @@ namespace LibrusWP.Logic
             return this.students.Where(x=> x.Class.Id==id).OrderBy(x => x.FullName).ToList();
         }
        
-        public IList<PresenceModel> GetPresencesByStudentAndSubject(string fullName, string SubjectId)
+        public IList<PresenceModel> GetPresencesByStudentAndSubject(int studentId, string SubjectId)
         {
-            return this.presences.Where(x => x.Student.FullName == fullName && x.TimeTable.Subject.Id== SubjectId).ToList();
+            return this.presences.Where(x => x.Student.StudentId == studentId && x.TimeTable.Subject.Id == SubjectId).ToList();
         }
         public TimeTableModel GetTimeTableById(int timetableId)
         {

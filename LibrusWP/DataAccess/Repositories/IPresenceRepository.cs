@@ -14,6 +14,8 @@ namespace LibrusWP.DataAccess
 
         void AddNew(PresenceEntity model);
 
-        IList<PresenceEntity> GetAllByStudentAndSubject(string studentId, string SubjectId);
+        IList<PresenceEntity> GetAllByStudentAndSubject(int studentId, string SubjectId);
+        
+        PresenceEntity GetByStudentAndSubjectAndDate(int studentId, string subjectId, DateTime date);
     }
 }

@@ -32,7 +32,6 @@ namespace LibrusWP.DataAccess
         public SubjectEntity GetById(string id)
         {
             return this.context.Subjects.Where(x => x.Id == id).SingleOrDefault();
-         
         }
     }
 }

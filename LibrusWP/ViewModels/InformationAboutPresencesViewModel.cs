@@ -17,7 +17,7 @@ namespace LibrusWP.ViewModels
             this.manager = manager;
             this.Subject = this.manager.GetSubjectById(subjectId);
             this.Student = this.manager.GetStudentById(studentId);
-            this.Presences = this.manager.GetPresencesByStudentAndSubject(this.Student.FullName, this.Subject.Id);
+            this.Presences = this.manager.GetPresencesByStudentAndSubject(this.Student.StudentId, this.Subject.Id);
            // this.TimeTable = this.manager.GetTimeTableBySubjectAndClass(this.Subject, this.Student.Class);
         }
 

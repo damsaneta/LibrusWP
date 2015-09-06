@@ -30,10 +30,14 @@ namespace LibrusWP.DataAccess
             this.context.SubmitChanges();
         }
 
-        public IList<PresenceEntity> GetAllByStudentAndSubject(string studentId, string subjectId)
+        public IList<PresenceEntity> GetAllByStudentAndSubject(int studentId, string subjectId)
         {
-            //return this.context.Presences.Where(x => x.StudentId == studentId && x.SubjectId == subjectId).ToList();
-            throw new NotImplementedException();
+            return this.context.Presences.Where(x => x.Student.Id == studentId && x.TimeTable.Subject.Id == subjectId).OrderBy(x => x.Id).ToList();
+        }
+        //do przetestowania
+        public PresenceEntity GetByStudentAndSubjectAndDate(int studentId, string subjectId, DateTime date)
+        {
+            return this.context.Presences.Where(x => x.Student.Id == studentId && x.TimeTable.Subject.Id == subjectId && x.Date.Date == date.Date).SingleOrDefault();
         }
     }
 }

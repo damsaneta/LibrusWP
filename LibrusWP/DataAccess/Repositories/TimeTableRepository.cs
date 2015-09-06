@@ -26,8 +26,7 @@ namespace LibrusWP.DataAccess
 
         public IList<TimeTableEntity> GetAllByClass(string clazzId)
         {
-            //return this.context.TimeTables.Where(x => x.ClassID == clazzId).ToList();
-            throw new NotImplementedException();
+            return this.context.TimeTables.Where(x => x.Class.Id == clazzId).ToList();
         }
 
         
@@ -39,10 +38,10 @@ namespace LibrusWP.DataAccess
 
         public TimeTableEntity GetByClassAndSubject(string classId, string subjectId)
         {
-           // return this.context.TimeTables.Where(x => x.ClassId == classId && x.SubjectId == subjectId).SingleOrDefault();
-            throw new NotImplementedException();
+            return this.context.TimeTables.Where(x => x.Class.Id == classId && x.Subject.Id == subjectId).SingleOrDefault();
             
         }
+
 
         public TimeTableEntity GetById(int timetableId)
         {

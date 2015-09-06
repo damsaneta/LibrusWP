@@ -25,8 +25,8 @@ namespace LibrusWP.DataAccess
 
         public IList<StudentEntity> GetAllByClass(string classId)
         {
-          //  return this.context.Students.Where(x => x.ClassId == classId).ToList();
-            throw new NotImplementedException();
+            return this.context.Students.Where(x => x.Class.Id == classId)
+                .OrderBy(x => x.Surname).ThenBy(x => x.Name).ToList();
         }
 
         public void AddNew(StudentEntity model)

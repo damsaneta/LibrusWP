@@ -14,7 +14,7 @@ namespace LibrusWP.Logic
         TimeTableModel GetTimeTable( ClassModel clazz, SubjectModel subject);// done
         StudentModel GetStudentById(int fullName);//done
 
-        IList<PresenceModel> GetPresencesByStudentAndSubject(string p1, string p2);
+        IList<PresenceModel> GetPresencesByStudentAndSubject(int p1, string p2);
         TimeTableModel GetTimeTableById(int timetableId);//done
         //IList<TimeTableModel> GetTimeTableBySubjectAndClass(SubjectModel subjectModel, ClassModel classModel);// niepotrzebne
         IList<PresenceModel> GetPresencesByStudentsSubjectDate(IList<StudentModel> students, SubjectModel subjectModel, DateTime dateTime);
