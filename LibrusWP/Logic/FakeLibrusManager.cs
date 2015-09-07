@@ -19,7 +19,6 @@ namespace LibrusWP.Logic
 
         public FakeLibrusManager()
         {
-            
             this.classes.Add(new ClassModel("IA"));
             this.classes.Add(new ClassModel("IB"));
             this.classes.Add(new ClassModel("IC"));
@@ -60,14 +59,16 @@ namespace LibrusWP.Logic
             Random gen = new Random();
                 id++;
                 var date = "środa";
-                this.timeTable.Add(new TimeTableModel(id, date, this.GetClassById("IA"), this.GetSubjectById("AM")));
+                var table =  new TimeTableModel(id, date, this.GetClassById("IA"), this.GetSubjectById("AM"));
+                this.timeTable.Add(table);
                 var start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++ )
                 {
                     var d = start.AddDays(7 * t);
+
                     foreach (StudentModel student in this.GetStudentsByClass("IA"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id),d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -78,14 +79,15 @@ namespace LibrusWP.Logic
                     }
                 }
                 id++;
-                this.timeTable.Add(new TimeTableModel(id, date, this.GetClassById("IB"), this.GetSubjectById("AiSD")));
+                table = new TimeTableModel(id, date, this.GetClassById("IB"), this.GetSubjectById("AiSD"));
+                this.timeTable.Add(table);
                  start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IB"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -96,14 +98,16 @@ namespace LibrusWP.Logic
                     }
                 }
                 id++;
-                this.timeTable.Add(new TimeTableModel(id, date, this.GetClassById("IC"), this.GetSubjectById("AL")));
+        
+                table = new TimeTableModel(id, date, this.GetClassById("IC"), this.GetSubjectById("AL"));
+                this.timeTable.Add(table);
                  start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IC"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -114,14 +118,15 @@ namespace LibrusWP.Logic
                     }
                 }
                 id++;
-                this.timeTable.Add(new TimeTableModel(id, date, this.GetClassById("IA"), this.GetSubjectById("MD")));
+                table = new TimeTableModel(id, date, this.GetClassById("IA"), this.GetSubjectById("MD"));
+                this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IA"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -132,14 +137,15 @@ namespace LibrusWP.Logic
                     }
                 }
                 id++;
-                this.timeTable.Add(new TimeTableModel(id, date, this.GetClassById("IB"), this.GetSubjectById("SO")));
+                table =new TimeTableModel(id, date, this.GetClassById("IB"), this.GetSubjectById("SO"));
+                this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IB"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -150,14 +156,15 @@ namespace LibrusWP.Logic
                     }
                 }
                 id++;
-                this.timeTable.Add(new TimeTableModel(id, date, this.GetClassById("IC"), this.GetSubjectById("SOS")));
+                table = new TimeTableModel(id, date, this.GetClassById("IC"), this.GetSubjectById("SOS"));
+                this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IC"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -169,14 +176,15 @@ namespace LibrusWP.Logic
                 }
                 id++;
   
-                this.timeTable.Add(new TimeTableModel(id, date, this.GetClassById("IA"), this.GetSubjectById("SO")));
+                table = new TimeTableModel(id, date, this.GetClassById("IA"), this.GetSubjectById("SO"));
+                this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IA"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -187,14 +195,15 @@ namespace LibrusWP.Logic
                     }
                 }
                 id++;
-                this.timeTable.Add(new TimeTableModel(id, date, this.GetClassById("IB"), this.GetSubjectById("TJF")));
+                table = new TimeTableModel(id, date, this.GetClassById("IB"), this.GetSubjectById("TJF"));
+                this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IB"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -205,14 +214,15 @@ namespace LibrusWP.Logic
                     }
                 }
                 id++;
-                this.timeTable.Add(new TimeTableModel(id, date, this.GetClassById("IC"), this.GetSubjectById("PB")));
+                table = new TimeTableModel(id, date, this.GetClassById("IC"), this.GetSubjectById("PB"));
+                this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IC"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -225,14 +235,15 @@ namespace LibrusWP.Logic
      
                 id++;
                 var date1 = "czwartek";
-                this.timeTable.Add(new TimeTableModel(id, date1, this.GetClassById("IA"), this.GetSubjectById("PI")));
+                table = new TimeTableModel(id, date1, this.GetClassById("IA"), this.GetSubjectById("PI"));
+                this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IA"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -243,14 +254,15 @@ namespace LibrusWP.Logic
                     }
                 }
                 id++;
-                this.timeTable.Add(new TimeTableModel(id, date1, this.GetClassById("IB"), this.GetSubjectById("PII")));
+                table = new TimeTableModel(id, date1, this.GetClassById("IB"), this.GetSubjectById("PII"));
+                this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IB"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -261,14 +273,15 @@ namespace LibrusWP.Logic
                     }
                 }
                 id++;
-                this.timeTable.Add(new TimeTableModel(id, date1, this.GetClassById("IC"), this.GetSubjectById("AiSD")));
+                table = new TimeTableModel(id, date1, this.GetClassById("IC"), this.GetSubjectById("AiSD"));
+                this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IC"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -280,14 +293,15 @@ namespace LibrusWP.Logic
                 }
                 id++;
 
-                this.timeTable.Add(new TimeTableModel(id, date1, this.GetClassById("IA"), this.GetSubjectById("AL")));
+                table = new TimeTableModel(id, date1, this.GetClassById("IA"), this.GetSubjectById("AL"));
+                this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IA"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -298,14 +312,15 @@ namespace LibrusWP.Logic
                     }
                 }
                 id++;
-                this.timeTable.Add(new TimeTableModel(id, date1, this.GetClassById("IB"), this.GetSubjectById("PB")));
+                table = new TimeTableModel(id, date1, this.GetClassById("IB"), this.GetSubjectById("PB"));
+                this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IB"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -316,14 +331,15 @@ namespace LibrusWP.Logic
                     }
                 }
                 id++;
-                this.timeTable.Add(new TimeTableModel(id, date1, this.GetClassById("IC"), this.GetSubjectById("PI")));
+                table = new TimeTableModel(id, date1, this.GetClassById("IC"), this.GetSubjectById("PI"));
+                this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IC"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -335,14 +351,15 @@ namespace LibrusWP.Logic
                 }
                 id++;
 
-                this.timeTable.Add(new TimeTableModel(id, date1, this.GetClassById("IA"), this.GetSubjectById("PB")));
+                table = new TimeTableModel(id, date1, this.GetClassById("IA"), this.GetSubjectById("PB"));
+                this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IA"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -353,14 +370,15 @@ namespace LibrusWP.Logic
                     }
                 }
                 id++;
-                this.timeTable.Add(new TimeTableModel(id, date1, this.GetClassById("IB"), this.GetSubjectById("SOS")));
+                table = new TimeTableModel(id, date1, this.GetClassById("IB"), this.GetSubjectById("SOS"));
+                this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IB"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -371,14 +389,15 @@ namespace LibrusWP.Logic
                     }
                 }
                 id++;
-                this.timeTable.Add(new TimeTableModel(id, date1, this.GetClassById("IC"), this.GetSubjectById("AM")));
+                table = new TimeTableModel(id, date1, this.GetClassById("IC"), this.GetSubjectById("AM"));
+                this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IC"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -391,14 +410,15 @@ namespace LibrusWP.Logic
            
                 id++;
                 var date2 = "piątek";
-                this.timeTable.Add(new TimeTableModel(id, date2, this.GetClassById("IA"), this.GetSubjectById("AiSD")));
+                table =new TimeTableModel(id, date2, this.GetClassById("IA"), this.GetSubjectById("AiSD"));
+                this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 3, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IA"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -409,14 +429,15 @@ namespace LibrusWP.Logic
                     }
                 }
                 id++;
-                this.timeTable.Add(new TimeTableModel(id, date2, this.GetClassById("IB"), this.GetSubjectById("PI")));
+                table = new TimeTableModel(id, date2, this.GetClassById("IB"), this.GetSubjectById("PI"));
+                this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 3, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IB"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -427,14 +448,15 @@ namespace LibrusWP.Logic
                     }
                 }
                 id++;
-                this.timeTable.Add(new TimeTableModel(id, date2, this.GetClassById("IC"), this.GetSubjectById("PIII")));
+                table = new TimeTableModel(id, date2, this.GetClassById("IC"), this.GetSubjectById("PIII"));
+                this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 3, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IC"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -446,14 +468,15 @@ namespace LibrusWP.Logic
                 }
                 id++;
 
-                this.timeTable.Add(new TimeTableModel(id, date2, this.GetClassById("IA"), this.GetSubjectById("TJF")));
+                table = new TimeTableModel(id, date2, this.GetClassById("IA"), this.GetSubjectById("TJF"));
+                this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 3, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IA"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -464,14 +487,15 @@ namespace LibrusWP.Logic
                     }
                 }
                 id++;
-                this.timeTable.Add(new TimeTableModel(id, date2, this.GetClassById("IB"), this.GetSubjectById("AM")));
+                table =new TimeTableModel(id, date2, this.GetClassById("IB"), this.GetSubjectById("AM"));
+            this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 3, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IB"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -482,14 +506,15 @@ namespace LibrusWP.Logic
                     }
                 }
                 id++;
-                this.timeTable.Add(new TimeTableModel(id, date2, this.GetClassById("IC"), this.GetSubjectById("LG")));
+                table =new TimeTableModel(id, date2, this.GetClassById("IC"), this.GetSubjectById("LG"));
+                this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 3, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IC"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -503,14 +528,15 @@ namespace LibrusWP.Logic
         
                 id++;
                 var date3 = "poniedziałek";
-                this.timeTable.Add(new TimeTableModel(id, date3, this.GetClassById("IA"), this.GetSubjectById("LG")));
+                table = new TimeTableModel(id, date3, this.GetClassById("IA"), this.GetSubjectById("LG"));
+                this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 6, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IA"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -521,14 +547,15 @@ namespace LibrusWP.Logic
                     }
                 }
                 id++;
-                this.timeTable.Add(new TimeTableModel(id, date3, this.GetClassById("IB"), this.GetSubjectById("AL")));
+                table = new TimeTableModel(id, date3, this.GetClassById("IB"), this.GetSubjectById("AL"));
+            this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 6, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IB"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -539,14 +566,15 @@ namespace LibrusWP.Logic
                     }
                 }
                 id++;
-                this.timeTable.Add(new TimeTableModel(id, date3, this.GetClassById("IC"), this.GetSubjectById("MD")));
+                table = new TimeTableModel(id, date3, this.GetClassById("IC"), this.GetSubjectById("MD"));
+                this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 6, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IC"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -558,14 +586,15 @@ namespace LibrusWP.Logic
                 }
                 id++;
 
-                this.timeTable.Add(new TimeTableModel(id, date3, this.GetClassById("IA"), this.GetSubjectById("PIII")));
+                table = new TimeTableModel(id, date3, this.GetClassById("IA"), this.GetSubjectById("PIII"));
+            this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 6, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IA"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -576,14 +605,15 @@ namespace LibrusWP.Logic
                     }
                 }
                 id++;
-                this.timeTable.Add(new TimeTableModel(id, date3, this.GetClassById("IB"), this.GetSubjectById("TO")));
+               table = new TimeTableModel(id, date3, this.GetClassById("IB"), this.GetSubjectById("TO"));
+            this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 6, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IB"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -594,14 +624,15 @@ namespace LibrusWP.Logic
                     }
                 }
                 id++;
-                this.timeTable.Add(new TimeTableModel(id, date3, this.GetClassById("IC"), this.GetSubjectById("SO")));
+                table = new TimeTableModel(id, date3, this.GetClassById("IC"), this.GetSubjectById("SO"));
+                this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 6, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IC"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -617,14 +648,15 @@ namespace LibrusWP.Logic
          
                 id++;
                 var date4 = "wtorek";
-                this.timeTable.Add(new TimeTableModel(id, date4, this.GetClassById("IA"), this.GetSubjectById("TO")));
+                table = new TimeTableModel(id, date4, this.GetClassById("IA"), this.GetSubjectById("TO"));
+            this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 7, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IA"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -635,14 +667,15 @@ namespace LibrusWP.Logic
                     }
                 }
                 id++;
-                this.timeTable.Add(new TimeTableModel(id, date4, this.GetClassById("IB"), this.GetSubjectById("PIII")));
+                table = new TimeTableModel(id, date4, this.GetClassById("IB"), this.GetSubjectById("PIII"));
+            this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 7, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IB"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -653,14 +686,15 @@ namespace LibrusWP.Logic
                     }
                 }
                 id++;
-                this.timeTable.Add(new TimeTableModel(id, date4, this.GetClassById("IC"), this.GetSubjectById("LG")));
+                table = new TimeTableModel(id, date4, this.GetClassById("IC"), this.GetSubjectById("LG"));
+            this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 7, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IC"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -672,14 +706,15 @@ namespace LibrusWP.Logic
                 }
                 id++;
 
-                this.timeTable.Add(new TimeTableModel(id, date4, this.GetClassById("IA"), this.GetSubjectById("SOS")));
+                table = new TimeTableModel(id, date4, this.GetClassById("IA"), this.GetSubjectById("SOS"));
+            this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 7, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IA"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -690,14 +725,15 @@ namespace LibrusWP.Logic
                     }
                 }
                 id++;
-                this.timeTable.Add(new TimeTableModel(id, date4, this.GetClassById("IB"), this.GetSubjectById("LG")));
+                table = new TimeTableModel(id, date4, this.GetClassById("IB"), this.GetSubjectById("LG"));
+            this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 7, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IB"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -708,14 +744,15 @@ namespace LibrusWP.Logic
                     }
                 }
                 id++;
-                this.timeTable.Add(new TimeTableModel(id, date4, this.GetClassById("IC"), this.GetSubjectById("TO")));
+                table = new TimeTableModel(id, date4, this.GetClassById("IC"), this.GetSubjectById("TO"));
+            this.timeTable.Add(table);
                 start = new DateTime(2014, 10, 7, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
                     var d = start.AddDays(7 * t);
                     foreach (StudentModel student in this.GetStudentsByClass("IC"))
                     {
-                        PresenceModel pre = new PresenceModel(student, this.GetTimeTableById(id), d);
+                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
 
                         int prob = gen.Next(100);
                         if (prob < 80)
@@ -769,7 +806,7 @@ namespace LibrusWP.Logic
        
         public IList<PresenceModel> GetPresencesByStudentAndSubject(int studentId, string SubjectId)
         {
-            return this.presences.Where(x => x.Student.StudentId == studentId && x.TimeTable.Subject.Id == SubjectId).ToList();
+            return this.presences.Where(x => x.Student.StudentId == studentId && x.Subject.Id == SubjectId).ToList();
         }
         public TimeTableModel GetTimeTableById(int timetableId)
         {
@@ -787,7 +824,7 @@ namespace LibrusWP.Logic
 
             foreach (PresenceModel c in list)
             {
-                if (this.presences.Where(x => x.Date.Date == c.Date.Date && x.TimeTable.Subject.Id == c.TimeTable.Subject.Id && x.Student.FullName == c.Student.FullName).FirstOrDefault() == null)
+                if (this.presences.Where(x => x.Date.Date == c.Date.Date && x.Subject.Id == c.Subject.Id && x.Student.FullName == c.Student.FullName).FirstOrDefault() == null)
                 {
                     this.presences.Add(c);
                 }
@@ -800,13 +837,17 @@ namespace LibrusWP.Logic
             IList<PresenceModel> list = new List<PresenceModel>();
             foreach (StudentModel s in students)
             {
-                var p = this.presences.Where(x => x.Student.FullName == s.FullName && x.TimeTable.Subject.Id == subjectModel.Id && x.Date.Date == dateTime.Date).FirstOrDefault();
+                var p = this.presences.Where(x => x.Student.FullName == s.FullName && x.Subject.Id == subjectModel.Id && x.Date.Date == dateTime.Date).FirstOrDefault();
                 if (p != null)
                 {
                     list.Add(p);
                 }
+                else
+                {
+                    list.Add(new PresenceModel(s, subjectModel, dateTime, null));
+                }
             }
-            return list.ToList();
+            return list;
         }
 
 

@@ -87,12 +87,10 @@ namespace LibrusWP.Logic
         
         public IList<PresenceModel> GetPresencesByStudentAndSubject(int studentId, string subjectId)
         {
-            var presences = this.presenceRepository.GetAllByStudentAndSubject(studentId, subjectId);
-            return presences.Select(x => new PresenceModel(x.Id
-                , new StudentModel(x.Student.Id, x.Student.Name, x.Student.Surname, new ClassModel(x.Student.Class.Id), x.Student.Gender)
-                , new TimeTableModel(x.TimeTable.Id, x.TimeTable.Day, new ClassModel(x.TimeTable.Class.Id)
-                , new SubjectModel(x.TimeTable.Subject.Id, x.TimeTable.Subject.Name)), x.Date.Date) {Present = x.Present}).ToList();
-            
+            IList<PresenceEntity> presences = this.presenceRepository.GetAllByStudentAndSubject(studentId, subjectId);
+            var student = this.GetStudentById(studentId);
+            var subject = this.GetSubjectById(subjectId);
+            return presences.Select(x => new PresenceModel(student, subject, x.Date, x)).ToList();
         }
 
         public TimeTableModel GetTimeTableById(int timetableId)
@@ -101,23 +99,17 @@ namespace LibrusWP.Logic
             return new TimeTableModel(timetable.Id,timetable.Day, new ClassModel(timetable.Class.Id)
                 , new SubjectModel(timetable.Subject.Id, timetable.Subject.Name));
         }
-        //TODO
+ 
         public IList<PresenceModel> GetPresencesByStudentsSubjectDate(IList<StudentModel> students, SubjectModel subjectModel, DateTime dateTime)
         {
             IList<PresenceModel> list = new List<PresenceModel>();
             foreach(StudentModel student in students)
             {
-                PresenceEntity x = this.presenceRepository.GetByStudentAndSubjectAndDate(student.StudentId, subjectModel.Id, dateTime);
-                if( x != null)
-                {
-                    PresenceModel presence = new PresenceModel(x.Id
-                     , new StudentModel(x.Student.Id, x.Student.Name, x.Student.Surname, new ClassModel(x.Student.Class.Id), x.Student.Gender)
-                     , new TimeTableModel(x.TimeTable.Id, x.TimeTable.Day, new ClassModel(x.TimeTable.Class.Id)
-                     , new SubjectModel(x.TimeTable.Subject.Id, x.TimeTable.Subject.Name)), x.Date.Date) { Present = x.Present };
-                    list.Add(presence);
-                }
+                PresenceEntity presence = this.presenceRepository.GetByStudentAndSubjectAndDate(student.StudentId, subjectModel.Id, dateTime);
+                list.Add(new PresenceModel(student, subjectModel, dateTime, presence));
             }
-            return list.ToList();
+
+            return list;
         }
         //TODO
         public void SavePresences(IList<PresenceModel> list)

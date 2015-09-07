@@ -6,31 +6,37 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using System.ComponentModel;
+using LibrusWP.DataAccess.Entities;
 
 namespace LibrusWP.Model
 {
     public class PresenceModel: INotifyPropertyChanged
     {
         private bool present;
-        public PresenceModel(StudentModel student, TimeTableModel timeTable, DateTime date)
-        {
+
+        public PresenceModel(StudentModel student, SubjectModel subjectModel, DateTime dateTime, PresenceEntity entity)
+        {            
             this.Student = student;
-            this.TimeTable = timeTable;
-            this.Date = date;
-        }
-        public PresenceModel(int id,StudentModel student, TimeTableModel timeTable, DateTime date)
-            : this(student, timeTable, date)
-        {
-            this.Id = id;
+            this.Subject = subjectModel;
+            if(entity != null)
+            {
+                this.Id = entity.Id;
+                this.Present = entity.Present;
+                this.Date = entity.Date;
+            }
+            else
+            {
+                this.Date = dateTime;
+            }
         }
 
         public int Id { get; set; }
 
         public StudentModel Student { get; private set; }
 
-        public TimeTableModel TimeTable { get; private set; }
-
         public DateTime Date { get; private set; }
+
+        public SubjectModel Subject { get; private set; }
 
 
         public bool Present
@@ -75,5 +81,7 @@ namespace LibrusWP.Model
             }
         }
         public event PropertyChangedEventHandler PropertyChanged;
+        private PresenceEntity x;
+    
     }
 }
