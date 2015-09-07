@@ -10,7 +10,7 @@ namespace LibrusWP.Logic
 {
     public class FakeLibrusManager : ILibrusManager
     {
-        private readonly IList<TimeTableModel> timeTable = new List<TimeTableModel>();
+        private readonly IList<TimeTableModel> timeTables = new List<TimeTableModel>();
         private readonly IList<ClassModel> classes = new List<ClassModel>();
         private readonly IList<StudentModel> students = new List<StudentModel>();
         private readonly IList<SubjectModel> subjects = new List<SubjectModel>();
@@ -60,7 +60,7 @@ namespace LibrusWP.Logic
                 id++;
                 var date = "środa";
                 var table =  new TimeTableModel(id, date, this.GetClassById("IA"), this.GetSubjectById("AM"));
-                this.timeTable.Add(table);
+                this.timeTables.Add(table);
                 var start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++ )
                 {
@@ -80,7 +80,7 @@ namespace LibrusWP.Logic
                 }
                 id++;
                 table = new TimeTableModel(id, date, this.GetClassById("IB"), this.GetSubjectById("AiSD"));
-                this.timeTable.Add(table);
+                this.timeTables.Add(table);
                  start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -100,7 +100,7 @@ namespace LibrusWP.Logic
                 id++;
         
                 table = new TimeTableModel(id, date, this.GetClassById("IC"), this.GetSubjectById("AL"));
-                this.timeTable.Add(table);
+                this.timeTables.Add(table);
                  start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -119,7 +119,7 @@ namespace LibrusWP.Logic
                 }
                 id++;
                 table = new TimeTableModel(id, date, this.GetClassById("IA"), this.GetSubjectById("MD"));
-                this.timeTable.Add(table);
+                this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -138,7 +138,7 @@ namespace LibrusWP.Logic
                 }
                 id++;
                 table =new TimeTableModel(id, date, this.GetClassById("IB"), this.GetSubjectById("SO"));
-                this.timeTable.Add(table);
+                this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -157,7 +157,7 @@ namespace LibrusWP.Logic
                 }
                 id++;
                 table = new TimeTableModel(id, date, this.GetClassById("IC"), this.GetSubjectById("SOS"));
-                this.timeTable.Add(table);
+                this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -177,7 +177,7 @@ namespace LibrusWP.Logic
                 id++;
   
                 table = new TimeTableModel(id, date, this.GetClassById("IA"), this.GetSubjectById("SO"));
-                this.timeTable.Add(table);
+                this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -196,7 +196,7 @@ namespace LibrusWP.Logic
                 }
                 id++;
                 table = new TimeTableModel(id, date, this.GetClassById("IB"), this.GetSubjectById("TJF"));
-                this.timeTable.Add(table);
+                this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -215,7 +215,7 @@ namespace LibrusWP.Logic
                 }
                 id++;
                 table = new TimeTableModel(id, date, this.GetClassById("IC"), this.GetSubjectById("PB"));
-                this.timeTable.Add(table);
+                this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -236,7 +236,7 @@ namespace LibrusWP.Logic
                 id++;
                 var date1 = "czwartek";
                 table = new TimeTableModel(id, date1, this.GetClassById("IA"), this.GetSubjectById("PI"));
-                this.timeTable.Add(table);
+                this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -255,7 +255,7 @@ namespace LibrusWP.Logic
                 }
                 id++;
                 table = new TimeTableModel(id, date1, this.GetClassById("IB"), this.GetSubjectById("PII"));
-                this.timeTable.Add(table);
+                this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -274,7 +274,7 @@ namespace LibrusWP.Logic
                 }
                 id++;
                 table = new TimeTableModel(id, date1, this.GetClassById("IC"), this.GetSubjectById("AiSD"));
-                this.timeTable.Add(table);
+                this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -294,7 +294,7 @@ namespace LibrusWP.Logic
                 id++;
 
                 table = new TimeTableModel(id, date1, this.GetClassById("IA"), this.GetSubjectById("AL"));
-                this.timeTable.Add(table);
+                this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -313,7 +313,7 @@ namespace LibrusWP.Logic
                 }
                 id++;
                 table = new TimeTableModel(id, date1, this.GetClassById("IB"), this.GetSubjectById("PB"));
-                this.timeTable.Add(table);
+                this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -332,7 +332,7 @@ namespace LibrusWP.Logic
                 }
                 id++;
                 table = new TimeTableModel(id, date1, this.GetClassById("IC"), this.GetSubjectById("PI"));
-                this.timeTable.Add(table);
+                this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -352,7 +352,7 @@ namespace LibrusWP.Logic
                 id++;
 
                 table = new TimeTableModel(id, date1, this.GetClassById("IA"), this.GetSubjectById("PB"));
-                this.timeTable.Add(table);
+                this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -371,7 +371,7 @@ namespace LibrusWP.Logic
                 }
                 id++;
                 table = new TimeTableModel(id, date1, this.GetClassById("IB"), this.GetSubjectById("SOS"));
-                this.timeTable.Add(table);
+                this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -390,7 +390,7 @@ namespace LibrusWP.Logic
                 }
                 id++;
                 table = new TimeTableModel(id, date1, this.GetClassById("IC"), this.GetSubjectById("AM"));
-                this.timeTable.Add(table);
+                this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -411,7 +411,7 @@ namespace LibrusWP.Logic
                 id++;
                 var date2 = "piątek";
                 table =new TimeTableModel(id, date2, this.GetClassById("IA"), this.GetSubjectById("AiSD"));
-                this.timeTable.Add(table);
+                this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 3, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -430,7 +430,7 @@ namespace LibrusWP.Logic
                 }
                 id++;
                 table = new TimeTableModel(id, date2, this.GetClassById("IB"), this.GetSubjectById("PI"));
-                this.timeTable.Add(table);
+                this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 3, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -449,7 +449,7 @@ namespace LibrusWP.Logic
                 }
                 id++;
                 table = new TimeTableModel(id, date2, this.GetClassById("IC"), this.GetSubjectById("PIII"));
-                this.timeTable.Add(table);
+                this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 3, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -469,7 +469,7 @@ namespace LibrusWP.Logic
                 id++;
 
                 table = new TimeTableModel(id, date2, this.GetClassById("IA"), this.GetSubjectById("TJF"));
-                this.timeTable.Add(table);
+                this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 3, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -488,7 +488,7 @@ namespace LibrusWP.Logic
                 }
                 id++;
                 table =new TimeTableModel(id, date2, this.GetClassById("IB"), this.GetSubjectById("AM"));
-            this.timeTable.Add(table);
+            this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 3, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -507,7 +507,7 @@ namespace LibrusWP.Logic
                 }
                 id++;
                 table =new TimeTableModel(id, date2, this.GetClassById("IC"), this.GetSubjectById("LG"));
-                this.timeTable.Add(table);
+                this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 3, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -529,7 +529,7 @@ namespace LibrusWP.Logic
                 id++;
                 var date3 = "poniedziałek";
                 table = new TimeTableModel(id, date3, this.GetClassById("IA"), this.GetSubjectById("LG"));
-                this.timeTable.Add(table);
+                this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 6, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -548,7 +548,7 @@ namespace LibrusWP.Logic
                 }
                 id++;
                 table = new TimeTableModel(id, date3, this.GetClassById("IB"), this.GetSubjectById("AL"));
-            this.timeTable.Add(table);
+            this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 6, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -567,7 +567,7 @@ namespace LibrusWP.Logic
                 }
                 id++;
                 table = new TimeTableModel(id, date3, this.GetClassById("IC"), this.GetSubjectById("MD"));
-                this.timeTable.Add(table);
+                this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 6, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -587,7 +587,7 @@ namespace LibrusWP.Logic
                 id++;
 
                 table = new TimeTableModel(id, date3, this.GetClassById("IA"), this.GetSubjectById("PIII"));
-            this.timeTable.Add(table);
+            this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 6, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -606,7 +606,7 @@ namespace LibrusWP.Logic
                 }
                 id++;
                table = new TimeTableModel(id, date3, this.GetClassById("IB"), this.GetSubjectById("TO"));
-            this.timeTable.Add(table);
+            this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 6, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -625,7 +625,7 @@ namespace LibrusWP.Logic
                 }
                 id++;
                 table = new TimeTableModel(id, date3, this.GetClassById("IC"), this.GetSubjectById("SO"));
-                this.timeTable.Add(table);
+                this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 6, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -649,7 +649,7 @@ namespace LibrusWP.Logic
                 id++;
                 var date4 = "wtorek";
                 table = new TimeTableModel(id, date4, this.GetClassById("IA"), this.GetSubjectById("TO"));
-            this.timeTable.Add(table);
+            this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 7, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -668,7 +668,7 @@ namespace LibrusWP.Logic
                 }
                 id++;
                 table = new TimeTableModel(id, date4, this.GetClassById("IB"), this.GetSubjectById("PIII"));
-            this.timeTable.Add(table);
+            this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 7, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -687,7 +687,7 @@ namespace LibrusWP.Logic
                 }
                 id++;
                 table = new TimeTableModel(id, date4, this.GetClassById("IC"), this.GetSubjectById("LG"));
-            this.timeTable.Add(table);
+            this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 7, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -707,7 +707,7 @@ namespace LibrusWP.Logic
                 id++;
 
                 table = new TimeTableModel(id, date4, this.GetClassById("IA"), this.GetSubjectById("SOS"));
-            this.timeTable.Add(table);
+            this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 7, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -726,7 +726,7 @@ namespace LibrusWP.Logic
                 }
                 id++;
                 table = new TimeTableModel(id, date4, this.GetClassById("IB"), this.GetSubjectById("LG"));
-            this.timeTable.Add(table);
+            this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 7, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -745,7 +745,7 @@ namespace LibrusWP.Logic
                 }
                 id++;
                 table = new TimeTableModel(id, date4, this.GetClassById("IC"), this.GetSubjectById("TO"));
-            this.timeTable.Add(table);
+            this.timeTables.Add(table);
                 start = new DateTime(2014, 10, 7, 8, 0, 0).Date;
                 for (int t = 0; t < 9; t++)
                 {
@@ -794,10 +794,11 @@ namespace LibrusWP.Logic
 
         public IList<SubjectModel> GetSubjectsForClass(ClassModel selectedClass)
         {
-            return this.timeTable.Where(x => x.Class.Id == selectedClass.Id)
+            return this.timeTables.Where(x => x.Class.Id == selectedClass.Id)
                 .Select(x => x.Subject)
                 .ToList();
         }
+        
 
         public IList<StudentModel> GetStudentsByClass(string id)
         {
@@ -810,7 +811,7 @@ namespace LibrusWP.Logic
         }
         public TimeTableModel GetTimeTableById(int timetableId)
         {
-            return this.timeTable.FirstOrDefault(x => x.Id == timetableId);
+            return this.timeTables.FirstOrDefault(x => x.Id == timetableId);
         }
 
         //public IList<TimeTableModel> GetTimeTableBySubjectAndClass(SubjectModel subjectModel, ClassModel classModel)
@@ -853,7 +854,7 @@ namespace LibrusWP.Logic
 
         public TimeTableModel GetTimeTable(ClassModel clazz, SubjectModel subject)
         {
-           return this.timeTable.Where(x => x.Class.Id == clazz.Id && x.Subject.Id == subject.Id).FirstOrDefault();
+           return this.timeTables.Where(x => x.Class.Id == clazz.Id && x.Subject.Id == subject.Id).FirstOrDefault();
         }
 
 
@@ -863,5 +864,20 @@ namespace LibrusWP.Logic
         //    SubjectModel subject= this.GetSubjectById(p2);
         //    return this.presences.Where(x => x.TimeTable.Class.Id == clazz.Id && x.TimeTable.Subject.Id == subject.Id).LastOrDefault().Date.Date.AddDays(7);
         //}
+
+
+        public IList<StudentModel> GetAllStudents()
+        {
+            return this.students;
+        }
+        public IList<PresenceModel> GetAllPresences()
+        {
+            return this.presences;
+        }
+
+        public IList<TimeTableModel> GetAllTimetables()
+        {
+            return this.timeTables;
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using LibrusWP.DataAccess;
+using LibrusWP.DataAccess.Entities;
 using LibrusWP.DataAccess.Repositories;
 using System;
 using System.Collections.Generic;
@@ -10,8 +11,9 @@ namespace LibrusWP.Logic
 {
     public static class LibrusFactory
     {
+        private const string connectionString = @"isostore:/LibrusWP.sdf";
         private static ILibrusManager librusManager;
-        private static LibrusDataContext ConnectionString = null;
+        private static LibrusDataContext DataContext = new LibrusDataContext(connectionString);
         private static IClassRepository classRepository;
         private static ISubjectRepository subjectRepository;
         private static ITimeTableRepository timeTableRepository;
@@ -31,7 +33,7 @@ namespace LibrusWP.Logic
         {
             if (classRepository == null)
             {
-                classRepository = new ClassRepository(LibrusFactory.ConnectionString);
+                classRepository = new ClassRepository(LibrusFactory.DataContext);
             }
 
             return classRepository;
@@ -41,7 +43,7 @@ namespace LibrusWP.Logic
         {
             if(presenceRepository == null)
             {
-               // presenceRepository = new PresenceRepository(ConnectionString);
+                presenceRepository = new PresenceRepository(LibrusFactory.DataContext);
             }
 
             return presenceRepository;
@@ -51,7 +53,7 @@ namespace LibrusWP.Logic
         {
             if(studentRepository == null)
             {
-                //studentRepository = new StudentRepository(ConnectionString, CreateClassRepository());
+                studentRepository = new StudentRepository(LibrusFactory.DataContext);
             }
 
             return studentRepository;
@@ -61,7 +63,7 @@ namespace LibrusWP.Logic
         {
             if(subjectRepository == null)
             {
-               // subjectRepository = new SubjectRepository(LibrusFactory.ConnectionString);
+                subjectRepository = new SubjectRepository(LibrusFactory.DataContext);
             }
 
             return subjectRepository;
@@ -72,20 +74,63 @@ namespace LibrusWP.Logic
         {
             if(timeTableRepository == null)
             {
-                //timeTableRepository = new TimeTableRepository(LibrusFactory.ConnectionString, CreateSubjectRepository(), CreateClassRepository());
+                timeTableRepository = new TimeTableRepository(LibrusFactory.DataContext);
             }
+
             return timeTableRepository;
         }
 
-        private static ILibrusManager GetFakeManager()
+        public static ILibrusManager GetFakeManager()
         {
             return new FakeLibrusManager();
         }
 
-        private static ILibrusManager GetManager()
+        public static ILibrusManager GetManager()
         {
             return new LibrusManager(CreateClassRepository(), CreateSubjectRepository(), CreateTimeTableRepository(),
                 CreateStudentRepository(), CreatePresenceREpository());
+        }
+
+        public static void InsertTestData()
+        {
+            if (!DataContext.DatabaseExists())
+            {
+                DataContext.CreateDatabase();
+
+
+                var fakeManager = GetFakeManager();
+                var manager = GetManager();
+                var classes = fakeManager.GetAllClasses();
+                foreach (var clazz in classes)
+                {
+                    classRepository.AddNew(new ClassEntity(clazz.Id));
+                }
+
+                var subjects = fakeManager.GetAllSubjects();
+                foreach (var subject in subjects)
+                {
+                    subjectRepository.AddNew(new SubjectEntity(subject.Id, subject.Name));
+                }
+
+                var students = fakeManager.GetAllStudents();
+                foreach (var student in students)
+                {
+                    studentRepository.AddNew(new StudentEntity(student.Name, student.Surname, classRepository.GetById(student.Class.Id), student.Gender));
+                }
+
+                var timetables = fakeManager.GetAllTimetables();
+                foreach(var timetable in timetables)
+                {
+                    timeTableRepository.AddNew(new TimeTableEntity(timetable.Day,classRepository.GetById(timetable.Class.Id), subjectRepository.GetById(timetable.Subject.Id)));
+                }
+
+                var presences = fakeManager.GetAllPresences();
+                foreach(var presence in presences)
+                {
+                    presenceRepository.AddNew(new PresenceEntity(studentRepository.GetById(presence.Student.StudentId),subjectRepository.GetById(presence.Subject.Id),presence.Date.Date,presence.Present));
+                }
+ 
+            }
         }
     }
 }

@@ -50,7 +50,7 @@ namespace LibrusWP.UnitTestsWP
             SubjectEntity subject = new SubjectEntity("AM", "Analiza Matematyczna");
             subrepo.AddNew(subject);
             TimeTableEntity timeTable = new TimeTableEntity("poniedziałek",clazz, subject);
-            var model1 = new PresenceEntity(model, timeTable, DateTime.Now.Date, true);
+            var model1 = new PresenceEntity(model, subject, DateTime.Now.Date, true);
             repo.AddNew(model1);
         }
 
@@ -69,8 +69,8 @@ namespace LibrusWP.UnitTestsWP
             SubjectEntity subject = new SubjectEntity("AM", "Analiza Matematyczna");
             subrepo.AddNew(subject);
             TimeTableEntity timeTable = new TimeTableEntity("poniedziałek", clazz, subject);
-            var model1 = new PresenceEntity(model, timeTable, DateTime.Now.Date, true);
-            var model2 = new PresenceEntity(model, timeTable, DateTime.Now.Date.AddDays(2), true);
+            var model1 = new PresenceEntity(model, subject, DateTime.Now.Date, true);
+            var model2 = new PresenceEntity(model, subject, DateTime.Now.Date.AddDays(2), true);
             repo.AddNew(model1);
             repo.AddNew(model2);
 

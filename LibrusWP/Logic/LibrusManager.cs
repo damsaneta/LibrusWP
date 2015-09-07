@@ -123,5 +123,28 @@ namespace LibrusWP.Logic
             //    }
             //}
         }
+
+
+        public IList<StudentModel> GetAllStudents()
+        {
+            IList<StudentEntity> students = studentRepository.GetAll();
+            return students.Select(x => new StudentModel(x.Id, x.Name, x.Surname, new ClassModel(x.Class.Id),x.Gender))
+                .OrderBy(x=> x.Surname).ThenBy(x => x.Name).ToList();
+
+        }
+
+        public IList<TimeTableModel> GetAllTimetables()
+        {
+            IList<TimeTableEntity> timetables = timeTableRepository.GetAll();
+            return timetables.Select(x => new TimeTableModel(x.Id, x.Day, new ClassModel(x.Class.Id)
+                , new SubjectModel(x.Subject.Id, x.Subject.Name))).ToList();
+        }
+
+        public IList<PresenceModel> GetAllPresences()
+        {
+            IList<PresenceEntity> presences = presenceRepository.GetAll();
+            return presences.Select(x => new PresenceModel(new StudentModel(x.Student.Id, x.Student.Name, x.Student.Surname, new ClassModel(x.Student.Class.Id), x.Student.Gender)
+                , new SubjectModel(x.Subject.Id, x.Subject.Name), x.Date.Date, x)).ToList();
+        }
     }
 }

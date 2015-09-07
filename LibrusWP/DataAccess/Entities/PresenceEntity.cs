@@ -15,18 +15,18 @@ namespace LibrusWP.DataAccess.Entities
         private int studentId;
         private EntityRef<StudentEntity> studentEntity = new EntityRef<StudentEntity>();
 
-        [Column(Name = "TimeTable", CanBeNull = false)]
-        private int timeTableId;
-        private EntityRef<TimeTableEntity> timeTableEntity = new EntityRef<TimeTableEntity>();
+        [Column(Name = "Subject", CanBeNull = false)]
+        private string subjectId;
+        private EntityRef<SubjectEntity> subjectEntity = new EntityRef<SubjectEntity>();
 
         public PresenceEntity()
         {
 
         }
-        public PresenceEntity(StudentEntity student, TimeTableEntity timeTable, DateTime date, bool present)
+        public PresenceEntity(StudentEntity student, SubjectEntity subject, DateTime date, bool present)
         {
             this.Student = student;
-            this.TimeTable = timeTable;
+            this.Subject = subject;
             this.Date = date;
             this.Present = present;
         }
@@ -42,12 +42,12 @@ namespace LibrusWP.DataAccess.Entities
             set { this.studentEntity.Entity = value; }
         }
 
-        [Association(IsForeignKey = true, Name = "FK_Presences_TimeTables", ThisKey = "timeTableId", OtherKey="Id",
-            Storage = "timeTableEntity")]
-        public TimeTableEntity TimeTable
+        [Association(IsForeignKey = true, Name = "FK_Presences_Subjects", ThisKey = "subjectId", OtherKey="Id",
+            Storage = "subjectEntity")]
+        public SubjectEntity Subject
         {
-            get { return this.timeTableEntity.Entity; }
-            set { this.timeTableEntity.Entity = value; }
+            get { return this.subjectEntity.Entity; }
+            set { this.subjectEntity.Entity = value; }
 
         }
 

@@ -32,12 +32,12 @@ namespace LibrusWP.DataAccess
 
         public IList<PresenceEntity> GetAllByStudentAndSubject(int studentId, string subjectId)
         {
-            return this.context.Presences.Where(x => x.Student.Id == studentId && x.TimeTable.Subject.Id == subjectId).OrderBy(x => x.Id).ToList();
+            return this.context.Presences.Where(x => x.Student.Id == studentId && x.Subject.Id == subjectId).OrderBy(x => x.Id).ToList();
         }
         //do przetestowania
         public PresenceEntity GetByStudentAndSubjectAndDate(int studentId, string subjectId, DateTime date)
         {
-            return this.context.Presences.Where(x => x.Student.Id == studentId && x.TimeTable.Subject.Id == subjectId && x.Date.Date == date.Date).SingleOrDefault();
+            return this.context.Presences.Where(x => x.Student.Id == studentId && x.Subject.Id == subjectId && x.Date.Date == date.Date).SingleOrDefault();
         }
     }
 }
