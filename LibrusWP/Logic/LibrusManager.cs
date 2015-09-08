@@ -114,6 +114,21 @@ namespace LibrusWP.Logic
         //TODO
         public void SavePresences(IList<PresenceModel> list)
         {
+            foreach(var model in list)
+            {
+                if(model.Id != 0)
+                {
+                    presenceRepository.Update(model.Id, model.Present);
+                }
+                else
+                {
+                    var student = this.studentRepository.GetById(model.Student.StudentId);
+                    var subject = this.subjectRepository.GetById(model.Subject.Id);
+                    var entity = new PresenceEntity(student, subject, model.Date, model.Present);
+                    presenceRepository.AddNew(entity);
+                }
+
+            }
             //data, timetable.Id, student.id ??
             //foreach (PresenceModel c in list)
             //{

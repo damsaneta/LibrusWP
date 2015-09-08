@@ -23,7 +23,7 @@ namespace LibrusWP.Logic
         {
             if(librusManager == null)
             {
-                librusManager = GetFakeManager();
+                librusManager = GetManager();
             }
 
             return librusManager;
@@ -98,6 +98,7 @@ namespace LibrusWP.Logic
                 DataContext.CreateDatabase();
 
 
+
                 var fakeManager = GetFakeManager();
                 var manager = GetManager();
                 var classes = fakeManager.GetAllClasses();
@@ -130,6 +131,7 @@ namespace LibrusWP.Logic
                     presenceRepository.AddNew(new PresenceEntity(studentRepository.GetById(presence.Student.StudentId),subjectRepository.GetById(presence.Subject.Id),presence.Date.Date,presence.Present));
                 }
  
+           
             }
         }
     }

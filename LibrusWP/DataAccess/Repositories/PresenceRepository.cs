@@ -39,5 +39,18 @@ namespace LibrusWP.DataAccess
         {
             return this.context.Presences.Where(x => x.Student.Id == studentId && x.Subject.Id == subjectId && x.Date.Date == date.Date).SingleOrDefault();
         }
+
+
+        public PresenceEntity GetById(int id)
+        {
+            return this.context.Presences.Where(x => x.Id == id).SingleOrDefault();
+        }
+
+        public void Update(int id, bool presence)
+        {
+            var entity = this.GetById(id);
+            entity.Present = presence;
+            this.context.SubmitChanges();
+        }
     }
 }

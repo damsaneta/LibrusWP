@@ -44,7 +44,7 @@
             <TextBlock Text="kalendarz" Margin="12,0,12,12" Style="{StaticResource PhoneTextTitle1Style}"/>
             <TextBlock TextWrapping="Wrap" Text="Wybierz datę zajęć" Height="64" Margin="12,0,12,12" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
             <toolkit:DatePicker Name="datePicker" Margin="0,0,12,12"></toolkit:DatePicker>
-            <Button Name="acceptButton" Content="akceptuj" HorizontalAlignment="Left" Margin="0,0,12,12" VerticalAlignment="Top" Width="174" Height="70" Click="AcceptClick"/>
+            <Button Name="acceptButton" Content="akceptuj" HorizontalAlignment="Left" Margin="0,0,12,12" VerticalAlignment="Top" Width="185" Height="70" Click="AcceptClick"/>
         </StackPanel>
        
         

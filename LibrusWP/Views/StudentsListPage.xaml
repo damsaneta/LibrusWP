@@ -53,7 +53,7 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid Height="80" VerticalAlignment="Top">
-                            <TextBlock Text="{Binding FullName}"  x:Name="classTxt" Style="{StaticResource PhoneTextLargeStyle}"  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="65" Width="236" FontSize="24" Margin="12,12,0,0" />
+                            <TextBlock Text="{Binding FullName}"  x:Name="classTxt" Style="{StaticResource PhoneTextLargeStyle}"  HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="65" Width="450" FontSize="36" Margin="12,12,0,0" />
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

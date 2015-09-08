@@ -38,7 +38,7 @@
     </toolkit:TransitionService.NavigationOutTransition>
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
-        <phone:Pivot Title="LIBRUS">
+        <phone:Pivot x:Name="pivot" Title="LIBRUS" >
             <phone:PivotItem Header="grupy" Name="classesPivotItem">
 
                 <ListBox x:Name="mylistbox" Margin="0,0,0,12"  ItemsSource="{Binding Path = Classes}" >
@@ -67,11 +67,11 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
             </phone:PivotItem>
-            <phone:PivotItem Header="podsumowanie" Name="summaryPivotItem" FontSize="18" >
+            <phone:PivotItem Header="zestawienie" Name="summaryPivotItem" FontSize="18" >
                 <StackPanel>
-                    <TextBlock TextWrapping="Wrap" Text="klasa" Height="40" Margin="12,0,12,12" Style="{StaticResource PhoneTextTitle2Style}"/>
+                    <TextBlock TextWrapping="Wrap" Text="grupa" Height="45" Margin="12,0,12,12" Style="{StaticResource PhoneTextTitle2Style}"/>
                     <TextBlock TextWrapping="Wrap" Text="{Binding SelectedClass.Name}" Height="31" Margin="12,0,12,12" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                    <TextBlock TextWrapping="Wrap" Text="przedmiot" Height="40" Margin="12,0,12,12" Style="{StaticResource PhoneTextTitle2Style}"/>
+                    <TextBlock TextWrapping="Wrap" Text="przedmiot" Height="45" Margin="12,0,12,12" Style="{StaticResource PhoneTextTitle2Style}"/>
                     <TextBlock TextWrapping="Wrap" Text="{Binding SelectedSubject.Name }"  Height="31" Margin="12,0,12,12" Style="{StaticResource PhoneTextSubtleStyle}"/>
                     <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center" Height="85" Width="456" >
                         <Button Content="dodaj obecności"  toolkit:TiltEffect.IsTiltEnabled="True"   Width="220"   Height="70" Click="PresenceButtonClick"  />

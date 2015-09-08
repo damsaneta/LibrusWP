@@ -35,6 +35,8 @@ namespace LibrusWP.Views
         private void ZapiszButtonClick(object sender, RoutedEventArgs e)
         {
             this.manager.SavePresences(this.ViewModel.Presences);
+            string item = "summaryPivotItem";
+            NavigationService.Navigate(new Uri("/Views/SelectionPage.xaml?item=" + item, UriKind.Relative));
         }
     }
 }

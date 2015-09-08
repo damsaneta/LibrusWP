@@ -10,6 +10,7 @@ using LibrusWP.Resources;
 using LibrusWP.ViewModels;
 using System.Threading;
 using System.Globalization;
+using LibrusWP.Logic;
 
 namespace LibrusWP
 {
@@ -84,12 +85,14 @@ namespace LibrusWP
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
+            // LibrusFactory.InsertTestData();
         }
 
         // Code to execute when the application is activated (brought to foreground)
         // This code will not execute when the application is first launched
         private void Application_Activated(object sender, ActivatedEventArgs e)
         {
+          
             // Ensure that application state is restored appropriately
             if (!App.ViewModel.IsDataLoaded)
             {

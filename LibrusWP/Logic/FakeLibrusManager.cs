@@ -15,7 +15,7 @@ namespace LibrusWP.Logic
         private readonly IList<StudentModel> students = new List<StudentModel>();
         private readonly IList<SubjectModel> subjects = new List<SubjectModel>();
         private readonly IList<PresenceModel> presences = new List<PresenceModel>();
-        private readonly IClassRepository classRepository;
+
 
         public FakeLibrusManager()
         {

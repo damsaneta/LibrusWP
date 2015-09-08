@@ -27,12 +27,12 @@ namespace LibrusWP.UnitTestsWP
             this.context.CreateDatabase();
         }
 
-        [TestCleanup]
-        public void Clean()
-        {
-            this.context.Dispose();
-            this.context = null;
-        }
+        //[TestCleanup]
+        //public void Clean()
+        //{
+        //    this.context.Dispose();
+        //    this.context = null;
+        //}
 
         [TestMethod]
         public void Add_new_class_test()
