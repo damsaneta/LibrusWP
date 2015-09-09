@@ -29,7 +29,7 @@ namespace LibrusWP.Views
             base.OnNavigatedTo(e);
             string value = string.Empty;
 
-            if (NavigationContext.QueryString.TryGetValue("msg", out value))
+            if (NavigationContext.QueryString.TryGetValue("msg", out value) )
             {
                 string[] tab = value.Split(new char[] { '/' });
                 this.DataContext = new PresencePageViewModel(LibrusFactory.CreateLibrusManager(), tab[0], tab[1], tab[2]);

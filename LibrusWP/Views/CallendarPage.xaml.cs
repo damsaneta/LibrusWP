@@ -30,12 +30,39 @@ namespace LibrusWP.Views
             {
                 this.value = w;
             }
+            if (e.NavigationMode != System.Windows.Navigation.NavigationMode.Back)
+            {
+                if (this.State.ContainsKey("date"))
+                {
+                    this.datePicker.Value = DateTime.Parse((string)this.State["date"]);
+
+                }
+            }
             //string[] tab = value.Split(new char[] { '/' });
             //DateTime date = manager.FindLastPresencesByClassAndSubject(tab[0], tab[1]);
            // this.datePicker.Value = date;
             //klasa i przedmiot
 
         }
+
+        protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
+        
+        {
+            base.OnNavigatedFrom(e);
+          //  var t = e.Uri.OriginalString;
+            if (e.Uri.OriginalString != "/Microsoft.Phone.Controls.Toolkit;component/DateTimePickers/DatePickerPage.xaml")
+            {
+                if (e.NavigationMode != System.Windows.Navigation.NavigationMode.Back
+                && e.NavigationMode != System.Windows.Navigation.NavigationMode.Forward)
+                {
+
+                    this.State["date"] = this.datePicker.Value.ToString();
+                }
+            }
+
+        }
+
+      
 
         private void AcceptClick(object sender, RoutedEventArgs e)
         {
