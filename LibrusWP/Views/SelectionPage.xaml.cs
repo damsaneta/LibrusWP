@@ -23,22 +23,6 @@ namespace LibrusWP.Views
 
         public SelectionPageViewModel ViewModel { get { return this.DataContext as SelectionPageViewModel; } }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            base.OnNavigatedTo(e);
-            string value = string.Empty;
-
-            if (NavigationContext.QueryString.TryGetValue("item", out value))
-            {
-                this.pivot.SelectedItem = this.summaryPivotItem;
-                while (NavigationService.CanGoBack)
-                    NavigationService.RemoveBackEntry();
-            }
-
-        }
-
-    
-
         private void PresenceButtonClick(object sender, RoutedEventArgs e)
         {
 

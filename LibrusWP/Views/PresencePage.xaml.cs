@@ -27,16 +27,21 @@ namespace LibrusWP.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            string value = NavigationContext.QueryString["msg"];
-            string[] tab = value.Split(new char[] { '/' });
-            this.DataContext = new PresencePageViewModel(LibrusFactory.CreateLibrusManager(), tab[0], tab[1], tab[2]);
+            string value = string.Empty;
+
+            if (NavigationContext.QueryString.TryGetValue("msg", out value))
+            {
+                string[] tab = value.Split(new char[] { '/' });
+                this.DataContext = new PresencePageViewModel(LibrusFactory.CreateLibrusManager(), tab[0], tab[1], tab[2]);
+            }
+
         }
 
         private void ZapiszButtonClick(object sender, RoutedEventArgs e)
         {
             this.manager.SavePresences(this.ViewModel.Presences);
-            string item = "summaryPivotItem";
-            NavigationService.Navigate(new Uri("/Views/SelectionPage.xaml?item=" + item, UriKind.Relative));
+            NavigationService.RemoveBackEntry();
+            NavigationService.GoBack();
         }
     }
 }
