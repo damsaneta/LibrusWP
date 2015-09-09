@@ -69,11 +69,11 @@
             </phone:PivotItem>
             <phone:PivotItem Header="zestawienie" Name="summaryPivotItem" FontSize="18" >
                 <StackPanel>
-                    <TextBlock TextWrapping="Wrap" Text="grupa" Margin="12,0,12,12" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                    <TextBlock TextWrapping="Wrap" Text="{Binding SelectedClass.Name}" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                    <TextBlock TextWrapping="Wrap" Text="przedmiot"  Margin="12,0,12,12" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                    <TextBlock TextWrapping="Wrap" Text="{Binding SelectedSubject.Name }"   Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                    <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center"  Width="456" Margin="0,36,0,0" >
+                    <TextBlock TextWrapping="Wrap" Text="grupa" Height="45" Margin="12,0,12,12" Style="{StaticResource PhoneTextTitle2Style}"/>
+                    <TextBlock TextWrapping="Wrap" Text="{Binding SelectedClass.Name}" Height="31" Margin="12,0,12,12" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                    <TextBlock TextWrapping="Wrap" Text="przedmiot" Height="45" Margin="12,0,12,12" Style="{StaticResource PhoneTextTitle2Style}"/>
+                    <TextBlock TextWrapping="Wrap" Text="{Binding SelectedSubject.Name }"  Height="31" Margin="12,0,12,12" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                    <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center" Height="85" Width="456" >
                         <Button Content="dodaj obecności"  toolkit:TiltEffect.IsTiltEnabled="True"   Width="220"   Height="70" Click="PresenceButtonClick"  />
                         <Button Content="pokaż obecności" toolkit:TiltEffect.IsTiltEnabled="True"   Width="220"  Height="70" Click="ShowPresencesButtonClick"     />
                     </StackPanel>

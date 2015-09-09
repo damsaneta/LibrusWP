@@ -56,12 +56,15 @@ namespace LibrusWP.Views
                 this.ViewModel.Classes[0].IsSelected = false;
                 this.ViewModel.Classes.Where(x => x.Id == (string)this.State["selectedClass"]).SingleOrDefault().IsSelected = true;
             }
-            //if (this.State.ContainsKey("selectedSubject"))
-            //{
-            //    this.ViewModel.RefreshSubjects();
-            //    this.ViewModel.Subjects[0].IsSelected = false;
-            //    this.ViewModel.Subjects.Where(x => x.Id == (string)this.State["selectedSubject"]).SingleOrDefault().IsSelected = true;
-            //}
+            if (this.State.ContainsKey("selectedSubject"))
+            {
+                this.ViewModel.RefreshSubjects();
+                this.ViewModel.SelectSubject2( (string)this.State["selectedSubject"]);
+                //this.ViewModel.RefreshSubjects();
+                //this.ViewModel.Subjects[0].IsSelected = false;
+                //this.ViewModel.Subjects.Where(x => x.Id == (string)this.State["selectedSubject"]).SingleOrDefault().IsSelected = true;
+                //var t = this.ViewModel.SelectedSubject;
+            }
             //if (this.State.ContainsKey("pivotItem"))
             //{
             //    this.pivot.SelectedIndex = Convert.ToInt32(this.State["pivotItem"]);

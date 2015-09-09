@@ -37,7 +37,7 @@ namespace LibrusWP.Logic
             var clazz2 = this.GetClassById("IC");
             this.students.Add(new StudentModel(10,"Anna", "Mrozowska", clazz2, true));
             this.students.Add(new StudentModel(11,"Kamila", "Boruta", clazz2, true));
-            this.students.Add(new StudentModel(12,"Anrzej", "Gutowski", clazz2, false));
+            this.students.Add(new StudentModel(12,"Andrzej", "Gutowski", clazz2, false));
             this.students.Add(new StudentModel(13,"Szymon", "Kołodziej", clazz2, false));
 
             

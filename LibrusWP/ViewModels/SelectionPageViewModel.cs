@@ -36,7 +36,7 @@ namespace LibrusWP.ViewModels
 
         public ClassModel SelectedClass { get { return this.Classes.FirstOrDefault(x => x.IsSelected);  } }
 
-        public SubjectModel SelectedSubject { get { return this.Subjects.FirstOrDefault(x => x.IsSelected); } }
+        public SubjectModel SelectedSubject { get { return this.Subjects.Where(x => x.IsSelected).Single(); } }
 
 
         public void RefreshSubjects()
@@ -93,5 +93,17 @@ namespace LibrusWP.ViewModels
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public void SelectSubject2(string p)
+        {
+            var selectedItem = this.Subjects.Where(x => x.Id == p).SingleOrDefault();
+            foreach (var item in this.Subjects.Where(x => x.IsSelected))
+            {
+                item.IsSelected = false;
+            }
+
+            selectedItem.IsSelected = true;
+            this.NotifyPropertyChanged("SelectedSubject");
+        }
     }
 }
