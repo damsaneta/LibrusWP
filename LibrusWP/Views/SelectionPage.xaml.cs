@@ -65,10 +65,10 @@ namespace LibrusWP.Views
                 //this.ViewModel.Subjects.Where(x => x.Id == (string)this.State["selectedSubject"]).SingleOrDefault().IsSelected = true;
                 //var t = this.ViewModel.SelectedSubject;
             }
-            //if (this.State.ContainsKey("pivotItem"))
-            //{
-            //    this.pivot.SelectedIndex = Convert.ToInt32(this.State["pivotItem"]);
-            //}
+            if (this.State.ContainsKey("pivotItem"))
+            {
+                this.pivot.SelectedIndex = Convert.ToInt32(this.State["pivotItem"]);
+            }
 
 
         }

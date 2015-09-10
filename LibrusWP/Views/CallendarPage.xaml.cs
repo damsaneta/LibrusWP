@@ -30,14 +30,14 @@ namespace LibrusWP.Views
             {
                 this.value = w;
             }
-            if (e.NavigationMode != System.Windows.Navigation.NavigationMode.Back)
-            {
+            //if (e.NavigationMode != System.Windows.Navigation.NavigationMode.Back)
+            //{
                 if (this.State.ContainsKey("date"))
                 {
                     this.datePicker.Value = DateTime.Parse((string)this.State["date"]);
 
                 }
-            }
+            //}
             //string[] tab = value.Split(new char[] { '/' });
             //DateTime date = manager.FindLastPresencesByClassAndSubject(tab[0], tab[1]);
            // this.datePicker.Value = date;
