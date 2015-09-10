@@ -72,5 +72,15 @@ namespace LibrusWP.Views
 
 
         }
+
+        private void ClassButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.pivot.SelectedIndex = 1;
+        }
+
+        private void SubjectButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.pivot.SelectedIndex = 2;
+        }
     }
 }

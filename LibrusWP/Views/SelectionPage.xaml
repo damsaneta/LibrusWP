@@ -47,7 +47,7 @@
                             <Grid Height="80" VerticalAlignment="Top">
                                 <TextBlock  x:Name="classTxt" Style="{StaticResource PhoneTextLargeStyle}" Text="{ Binding Name}" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="57" Width="236" FontSize="36" Margin="12,12,0,0" />
                                 <Button Background="{Binding Path=StyleName}" toolkit:TiltEffect.IsTiltEnabled="True"  Command="{Binding DataContext.ChangeClassSelection, ElementName=librusApp}" CommandParameter="{Binding}" 
-                                            Content="Wybierz" HorizontalAlignment="Left" Margin="275,0,0,0" VerticalAlignment="Top" Height="70" Width="181" />
+                                            Content="Wybierz" HorizontalAlignment="Left" Margin="275,0,0,0" VerticalAlignment="Top"  Height="70" Width="181" Click="ClassButtonClick" />
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -61,7 +61,7 @@
                             <Grid Height="80" VerticalAlignment="Top">
                                 <TextBlock  x:Name="classTxt" Style="{StaticResource PhoneTextLargeStyle}" Text="{ Binding Name}" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="65" Width="236" FontSize="24" Margin="12,12,0,0" />
                                 <Button Background="{Binding Path=StyleName}" toolkit:TiltEffect.IsTiltEnabled="True"    Command="{Binding DataContext.ChangeSubjectSelection, ElementName=librusApp}" CommandParameter="{Binding}" 
-                                            Content="Wybierz" HorizontalAlignment="Left" Margin="275,0,0,0" VerticalAlignment="Top" Height="70" Width="181" />
+                                            Content="Wybierz" HorizontalAlignment="Left" Margin="275,0,0,0" VerticalAlignment="Top" Height="70" Width="181" Click="SubjectButtonClick" />
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
