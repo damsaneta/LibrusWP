@@ -13,7 +13,7 @@ namespace LibrusWP.Views
 {
     public partial class CallendarPage : PhoneApplicationPage
     {
-        private readonly ILibrusManager manager = LibrusFactory.CreateLibrusManager(); 
+        private readonly ILibrusManager manager = LibrusFactory.CreateLibrusManager();
 
         string value = string.Empty;
         public CallendarPage()
@@ -25,31 +25,23 @@ namespace LibrusWP.Views
         {
             base.OnNavigatedTo(e);
             string w = string.Empty;
-            
+
             if (NavigationContext.QueryString.TryGetValue("conclusion", out w))
             {
                 this.value = w;
             }
-            //if (e.NavigationMode != System.Windows.Navigation.NavigationMode.Back)
-            //{
-                if (this.State.ContainsKey("date"))
-                {
-                    this.datePicker.Value = DateTime.Parse((string)this.State["date"]);
 
-                }
-            //}
-            //string[] tab = value.Split(new char[] { '/' });
-            //DateTime date = manager.FindLastPresencesByClassAndSubject(tab[0], tab[1]);
-           // this.datePicker.Value = date;
-            //klasa i przedmiot
+            if (this.State.ContainsKey("date"))
+            {
+                this.datePicker.Value = DateTime.Parse((string)this.State["date"]);
+            }
 
         }
 
         protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
-        
         {
             base.OnNavigatedFrom(e);
-          //  var t = e.Uri.OriginalString;
+
             if (e.Uri.OriginalString != "/Microsoft.Phone.Controls.Toolkit;component/DateTimePickers/DatePickerPage.xaml")
             {
                 if (e.NavigationMode != System.Windows.Navigation.NavigationMode.Back
@@ -62,13 +54,13 @@ namespace LibrusWP.Views
 
         }
 
-      
+
 
         private void AcceptClick(object sender, RoutedEventArgs e)
         {
 
-            var z = this.datePicker.Value.ToString()+"/" + this.value; 
-            NavigationService.Navigate( new Uri("/Views/PresencePage.xaml?msg="+ z,  UriKind.Relative));
+            var z = this.datePicker.Value.ToString() + "/" + this.value;
+            NavigationService.Navigate(new Uri("/Views/PresencePage.xaml?msg=" + z, UriKind.Relative));
             //NavigationService.Navigate(new Uri("/Views/SelectionPage.xaml", UriKind.Relative));
         }
     }

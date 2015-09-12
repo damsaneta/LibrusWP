@@ -11,7 +11,7 @@ namespace LibrusWP.DataAccess
 {
     public class TimeTableRepository : ITimeTableRepository
     {
-       
+
         private readonly LibrusDataContext context;
 
         public TimeTableRepository(LibrusDataContext context)
@@ -29,7 +29,7 @@ namespace LibrusWP.DataAccess
             return this.context.TimeTables.Where(x => x.Class.Id == clazzId).ToList();
         }
 
-        
+
         public void AddNew(TimeTableEntity model)
         {
             this.context.TimeTables.InsertOnSubmit(model);
@@ -39,14 +39,13 @@ namespace LibrusWP.DataAccess
         public TimeTableEntity GetByClassAndSubject(string classId, string subjectId)
         {
             return this.context.TimeTables.Where(x => x.Class.Id == classId && x.Subject.Id == subjectId).SingleOrDefault();
-            
-        }
 
+        }
 
         public TimeTableEntity GetById(int timetableId)
         {
             return this.context.TimeTables.Where(x => x.Id == timetableId).SingleOrDefault();
-           
+
         }
     }
 }

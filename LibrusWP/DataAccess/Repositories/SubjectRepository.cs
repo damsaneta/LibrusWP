@@ -17,11 +17,11 @@ namespace LibrusWP.DataAccess
         {
             this.context= context;
         }
+
         public List<SubjectEntity> GetAll()
         {
             return this.context.Subjects.OrderBy(x => x.Name).ToList();
         }
-
 
         public void AddNew(SubjectEntity model)
         {

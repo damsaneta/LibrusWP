@@ -10,15 +10,15 @@ using LibrusWP.DataAccess.Entities;
 
 namespace LibrusWP.Model
 {
-    public class PresenceModel: INotifyPropertyChanged
+    public class PresenceModel : INotifyPropertyChanged
     {
         private bool present;
 
         public PresenceModel(StudentModel student, SubjectModel subjectModel, DateTime dateTime, PresenceEntity entity)
-        {            
+        {
             this.Student = student;
             this.Subject = subjectModel;
-            if(entity != null)
+            if (entity != null)
             {
                 this.Id = entity.Id;
                 this.Present = entity.Present;
@@ -38,7 +38,6 @@ namespace LibrusWP.Model
 
         public SubjectModel Subject { get; private set; }
 
-
         public bool Present
         {
             get { return this.present; }
@@ -57,21 +56,21 @@ namespace LibrusWP.Model
                 }
             }
         }
-        
+
         public string TextContent
         {
             get
             {
-                if(Student.Gender)
+                if (Student.Gender)
                 {
                     return this.present ? "obecna" : "nieobecna";
                 }
                 return this.present ? "obecny" : "nieobecny";
-                
+
             }
         }
-        public string StyleName
 
+        public string StyleName
         {
             get
             {
@@ -80,8 +79,8 @@ namespace LibrusWP.Model
                     : "Transparent";
             }
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
-        private PresenceEntity x;
-    
+
     }
 }

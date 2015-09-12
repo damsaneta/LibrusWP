@@ -17,7 +17,7 @@ namespace LibrusWP.DataAccess
         {
             this.context = context;
         }
-        //nieuzywane
+
         public IList<StudentEntity> GetAll()
         {
             return this.context.Students.ToList();

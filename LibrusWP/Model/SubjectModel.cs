@@ -24,7 +24,10 @@ namespace LibrusWP.Model
 
         public bool IsSelected
         {
-            get { return this.isSelected; }
+            get 
+            {
+                return this.isSelected;
+            }
             set
             {
                 if (this.isSelected != value)
@@ -39,6 +42,7 @@ namespace LibrusWP.Model
                 }
             }
         }
+
         public string StyleName { get { return this.IsSelected 
             ? ((Color)Application.Current.Resources["PhoneAccentColor"]).ToString() 
             : "Transparent"; } }

@@ -19,6 +19,7 @@ namespace LibrusWP.Logic
         private static ITimeTableRepository timeTableRepository;
         private static IStudentRepository studentRepository;
         private static IPresenceRepository presenceRepository;
+
         public static ILibrusManager CreateLibrusManager()
         {
             if(librusManager == null)
@@ -39,7 +40,7 @@ namespace LibrusWP.Logic
             return classRepository;
         }
 
-        public static IPresenceRepository CreatePresenceREpository()
+        public static IPresenceRepository CreatePresenceRepository()
         {
             if(presenceRepository == null)
             {
@@ -88,7 +89,7 @@ namespace LibrusWP.Logic
         public static ILibrusManager GetManager()
         {
             return new LibrusManager(CreateClassRepository(), CreateSubjectRepository(), CreateTimeTableRepository(),
-                CreateStudentRepository(), CreatePresenceREpository());
+                CreateStudentRepository(), CreatePresenceRepository());
         }
 
         public static void InsertTestData()

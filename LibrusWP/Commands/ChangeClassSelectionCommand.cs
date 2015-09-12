@@ -1,4 +1,5 @@
 ﻿using LibrusWP.Model;
+using LibrusWP.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,9 @@ namespace LibrusWP.Commands
 {
     public class ChangeClassSelectionCommand: ICommand
     {
-        private ViewModels.SelectionPageViewModel vm;
+        private SelectionPageViewModel vm;
 
-        public ChangeClassSelectionCommand(ViewModels.SelectionPageViewModel vm)
+        public ChangeClassSelectionCommand(SelectionPageViewModel vm)
         {
             this.vm = vm;
         }

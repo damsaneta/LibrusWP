@@ -18,7 +18,6 @@ namespace LibrusWP.ViewModels
             this.Subject = this.manager.GetSubjectById(subjectId);
             this.Student = this.manager.GetStudentById(studentId);
             this.Presences = this.manager.GetPresencesByStudentAndSubject(this.Student.StudentId, this.Subject.Id);
-           // this.TimeTable = this.manager.GetTimeTableBySubjectAndClass(this.Subject, this.Student.Class);
         }
 
 
@@ -27,8 +26,6 @@ namespace LibrusWP.ViewModels
         public StudentModel Student { get; private set; }
 
         public SubjectModel Subject { get; private set; }
-
-      //  public IList<TimeTableModel> TimeTable {get; private set;}
 
     }
 }

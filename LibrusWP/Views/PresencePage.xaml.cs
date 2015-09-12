@@ -17,6 +17,7 @@ namespace LibrusWP.Views
     public partial class PresencePage : PhoneApplicationPage
     {
         private readonly ILibrusManager manager = LibrusFactory.CreateLibrusManager();
+
         public PresencePage()
         {
             InitializeComponent();
@@ -43,8 +44,7 @@ namespace LibrusWP.Views
                     p.Present =  Convert.ToBoolean(tab[i]);
                     i++;
                 }
-              //  this.ViewModel.Classes.Where(x => x.Id == (string)this.State["selectedClass"]).SingleOrDefault().IsSelected = true;
-            }
+              }
 
         }
         protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)

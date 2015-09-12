@@ -25,7 +25,6 @@ namespace LibrusWP.ViewModels
             var students = this.manager.GetStudentsByClass(this.Class.Id);
             var timetable = this.manager.GetTimeTable( this.Class, this.Subject);
             this.Presences = this.manager.GetPresencesByStudentsSubjectDate(students, this.Subject, this.Date);
-            //this.Presences = students.Select(x => new PresenceModel(x,timetable, this.Date)).ToList();
             this.ChangePresenceSelection = new ChangePresenceSelectionCommand(this);
         }
 

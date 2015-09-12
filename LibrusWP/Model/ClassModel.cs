@@ -16,13 +16,17 @@ namespace LibrusWP.Model
         {
             this.Id = id;
         }
+
         public string Id { get; private set; }
-        
+
         public string Name { get { return "grupa " + this.Id; } }
 
         public bool IsSelected
         {
-            get { return this.isSelected; }
+            get
+            {
+                return this.isSelected;
+            }
             set
             {
                 if (this.isSelected != value)
@@ -37,6 +41,7 @@ namespace LibrusWP.Model
                 }
             }
         }
+
         public string StyleName { get { return this.IsSelected ? ((Color)Application.Current.Resources["PhoneAccentColor"]).ToString() : "Transparent"; } }
 
         public event PropertyChangedEventHandler PropertyChanged;

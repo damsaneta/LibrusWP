@@ -111,7 +111,7 @@ namespace LibrusWP.Logic
 
             return list;
         }
-        //TODO
+     
         public void SavePresences(IList<PresenceModel> list)
         {
             foreach(var model in list)
@@ -129,14 +129,7 @@ namespace LibrusWP.Logic
                 }
 
             }
-            //data, timetable.Id, student.id ??
-            //foreach (PresenceModel c in list)
-            //{
-            //    if (this.presences.Where(x => x.Date.Date == c.Date.Date && x.TimeTable.Subject.Id == c.TimeTable.Subject.Id && x.Student.FullName == c.Student.FullName).FirstOrDefault() == null)
-            //    {
-            //        this.presences.Add(c);
-            //    }
-            //}
+        
         }
 
 
