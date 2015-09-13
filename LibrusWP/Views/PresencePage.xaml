@@ -9,7 +9,7 @@
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:ViewModels="clr-namespace:LibrusWP.ViewModels"
     mc:Ignorable="d"
-    d:DataContext="{d:DesignData ../SampleData/PresencePageViewModelSampleData.xaml}"
+    d:DataContext="{d:DesignData ../SampleData/PresencePageViewModelSampleData1.xaml}"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"  

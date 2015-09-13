@@ -9,7 +9,7 @@
     xmlns:ViewModels="clr-namespace:LibrusWP.ViewModels"
     x:Class="LibrusWP.Views.SelectionPage"
     mc:Ignorable="d"
-    d:DataContext="{d:DesignData ../SampleData/SelectionPageViewModelSampleData.xaml}"
+    d:DataContext="{d:DesignData ../SampleData/SelectionPageViewModelSampleData1.xaml}"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -41,7 +41,7 @@
         <phone:Pivot x:Name="pivot" Title="LIBRUS" >
             <phone:PivotItem Header="grupy" Name="classesPivotItem">
 
-                <ListBox x:Name="mylistbox" Margin="0,0,0,12"  ItemsSource="{Binding Path = Classes}" >
+                <ListBox x:Name="mylistbox" Margin="0,0,0,12"  ItemsSource="{Binding Path = Classes}"  >
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid Height="80" VerticalAlignment="Top">

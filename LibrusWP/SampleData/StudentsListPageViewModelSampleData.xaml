@@ -1,0 +1,60 @@
+﻿<ViewModels:StudentsListPageViewModel xmlns:ViewModels="clr-namespace:LibrusWP.ViewModels" xmlns:Model="clr-namespace:LibrusWP.Model">
+	<ViewModels:StudentsListPageViewModel.Class>
+		<Model:ClassModel Id="Hendrerit sem velit sit" IsSelected="False" Name="Quis vestibulum vel adipiscing vitae" StyleName="Parturient urna himenaeos"/>
+	</ViewModels:StudentsListPageViewModel.Class>
+	<ViewModels:StudentsListPageViewModel.Subject>
+		<Model:SubjectModel Id="Sodales viverra parturient" IsSelected="True" Name="Vestibulum nascetur pharetra pede" StyleName="Habitasse placerat quam"/>
+	</ViewModels:StudentsListPageViewModel.Subject>
+	<ViewModels:StudentsListPageViewModel.Students>
+		<Model:StudentModel FullName="Curae" Gender="True" Name="Dis" Surname="Donec" StudentId="56">
+			<Model:StudentModel.Class>
+				<Model:ClassModel Id="Hac adipiscing" IsSelected="False" Name="Phasellus nullam cras" StyleName="Praesent accumsan bibendum"/>
+			</Model:StudentModel.Class>
+		</Model:StudentModel>
+		<Model:StudentModel FullName="Donec" Gender="True" Name="Amet" Surname="Arcu" StudentId="26">
+			<Model:StudentModel.Class>
+				<Model:ClassModel Id="Non vestibulum consequat dictumst per" IsSelected="False" Name="Aptent vivamus" StyleName="Etiam aliquam"/>
+			</Model:StudentModel.Class>
+		</Model:StudentModel>
+		<Model:StudentModel FullName="Etiam" Gender="True" Name="Ante" Surname="Aenean" StudentId="94">
+			<Model:StudentModel.Class>
+				<Model:ClassModel Id="Lorem inceptos" IsSelected="False" Name="Sed interdum morbi lobortis" StyleName="Blandit fermentum commodo congue"/>
+			</Model:StudentModel.Class>
+		</Model:StudentModel>
+		<Model:StudentModel FullName="Aptent auctor" Gender="True" Name="Arcu" Surname="Vivamus" StudentId="93">
+			<Model:StudentModel.Class>
+				<Model:ClassModel Id="Ante pharetra" IsSelected="False" Name="Vestibulum vestibulum dapibus proin" StyleName="Egestas arcu"/>
+			</Model:StudentModel.Class>
+		</Model:StudentModel>
+		<Model:StudentModel FullName="Ante fusce" Gender="True" Name="Diam" Surname="Etiam" StudentId="94">
+			<Model:StudentModel.Class>
+				<Model:ClassModel Id="Sagittis elit dolor" IsSelected="False" Name="Habitasse parturient" StyleName="Fames enim erat eros hendrerit"/>
+			</Model:StudentModel.Class>
+		</Model:StudentModel>
+		<Model:StudentModel FullName="Lorem" Gender="True" Name="Eget" Surname="Nam" StudentId="61">
+			<Model:StudentModel.Class>
+				<Model:ClassModel Id="Ipsum malesuada penatibus" IsSelected="False" Name="Vel justo porttitor vestibulum" StyleName="Tincidunt tristique torquent"/>
+			</Model:StudentModel.Class>
+		</Model:StudentModel>
+		<Model:StudentModel FullName="Arcu" Gender="True" Name="Est" Surname="Diam" StudentId="57">
+			<Model:StudentModel.Class>
+				<Model:ClassModel Id="Vestibulum adipiscing" IsSelected="False" Name="Vehicula volutpat vulputate nunc" StyleName="Mollis dis parturient montes nostra"/>
+			</Model:StudentModel.Class>
+		</Model:StudentModel>
+		<Model:StudentModel FullName="Diam" Gender="True" Name="Elit" Surname="Sed" StudentId="54">
+			<Model:StudentModel.Class>
+				<Model:ClassModel Id="Massa metus morbi accumsan primis" IsSelected="False" Name="Vestibulum bibendum vestibulum" StyleName="Potenti rutrum adipiscing parturient"/>
+			</Model:StudentModel.Class>
+		</Model:StudentModel>
+		<Model:StudentModel FullName="Dis morbi" Gender="True" Name="Enim" Surname="Aliquam" StudentId="26">
+			<Model:StudentModel.Class>
+				<Model:ClassModel Id="Facilisi faucibus semper netus" IsSelected="False" Name="Mus dignissim" StyleName="Habitant elementum inceptos nec"/>
+			</Model:StudentModel.Class>
+		</Model:StudentModel>
+		<Model:StudentModel FullName="Eget elit" Gender="True" Name="Class" Surname="Eget" StudentId="20">
+			<Model:StudentModel.Class>
+				<Model:ClassModel Id="Fringilla tellus tempor rhoncus purus" IsSelected="False" Name="Adipiscing tempus tortor sed" StyleName="Lobortis orci risus"/>
+			</Model:StudentModel.Class>
+		</Model:StudentModel>
+	</ViewModels:StudentsListPageViewModel.Students>
+</ViewModels:StudentsListPageViewModel>

@@ -11,7 +11,8 @@ namespace LibrusWP.ViewModels
 {
     public class StudentsListPageViewModel
     {
-        private readonly ILibrusManager manager;
+        private ILibrusManager manager;
+        private  string a;
 
         public StudentsListPageViewModel(ILibrusManager manager, string clazz, string subject)
         {
@@ -20,6 +21,7 @@ namespace LibrusWP.ViewModels
             this.Class=this.manager.GetClassById(clazz);
             this.Students= manager.GetStudentsByClass(this.Class.Id);
         }
+
         public IList<StudentModel> Students { get; private set; }
 
         public SubjectModel Subject { get; private set; }

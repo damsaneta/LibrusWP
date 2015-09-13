@@ -1,6 +1,7 @@
 ﻿using LibrusWP.Model;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 namespace LibrusWP.Logic
 {
     public interface ILibrusManager
@@ -19,7 +20,6 @@ namespace LibrusWP.Logic
         IList<PresenceModel> GetPresencesByStudentAndSubject(int p1, string p2);
         TimeTableModel GetTimeTableById(int timetableId);     
         IList<PresenceModel> GetPresencesByStudentsSubjectDate(IList<StudentModel> students, SubjectModel subjectModel, DateTime dateTime);
-        void SavePresences(IList<PresenceModel> list);
-
+        Task SavePresences(IList<PresenceModel> list);
     }
 }

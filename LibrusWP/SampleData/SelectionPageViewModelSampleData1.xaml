@@ -1,0 +1,32 @@
+﻿<ViewModels:SelectionPageViewModel xmlns:ViewModels="clr-namespace:LibrusWP.ViewModels" xmlns:Model="clr-namespace:LibrusWP.Model">
+	<ViewModels:SelectionPageViewModel.Classes>
+		<Model:ClassModel Id="Sed" IsSelected="True" Name="Duis" StyleName="Sed integer"/>
+		<Model:ClassModel Id="Dis" IsSelected="False" Name="Nam" StyleName="Hac class curae"/>
+		<Model:ClassModel Id="Est" IsSelected="True" Name="Nunc" StyleName="Leo phasellus mus nunc"/>
+		<Model:ClassModel Id="Hac" IsSelected="False" Name="Amet" StyleName="Amet facilisi faucibus"/>
+		<Model:ClassModel Id="Leo" IsSelected="True" Name="Ante" StyleName="Sit blandit"/>
+		<Model:ClassModel Id="Mus" IsSelected="False" Name="Arcu" StyleName="Adipiscing nam dignissim conubia"/>
+		<Model:ClassModel Id="Nec" IsSelected="True" Name="Sed" StyleName="Cubilia facilisis diam"/>
+		<Model:ClassModel Id="Non" IsSelected="False" Name="Dis" StyleName="Elit vestibulum feugiat gravida"/>
+		<Model:ClassModel Id="Per" IsSelected="True" Name="Diam" StyleName="Fringilla est vestibulum lectus eros"/>
+		<Model:ClassModel Id="Sed" IsSelected="False" Name="Eget" StyleName="Mus etiam nibh libero ligula"/>
+	</ViewModels:SelectionPageViewModel.Classes>
+	<ViewModels:SelectionPageViewModel.SelectedSubject>
+		<Model:SubjectModel Id="Sed" IsSelected="False" Name="Nunc" StyleName="Volutpat convallis"/>
+	</ViewModels:SelectionPageViewModel.SelectedSubject>
+	<ViewModels:SelectionPageViewModel.Subjects>
+		<Model:SubjectModel Id="Dis" IsSelected="True" Name="Sed" StyleName="Vestibulum morbi nec luctus nisl"/>
+		<Model:SubjectModel Id="Est" IsSelected="False" Name="Dis" StyleName="Himenaeos adipiscing imperdiet malesuada"/>
+		<Model:SubjectModel Id="Hac" IsSelected="True" Name="Est" StyleName="Pulvinar parturient montes"/>
+		<Model:SubjectModel Id="Leo" IsSelected="False" Name="Amet" StyleName="Ornare posuere potenti"/>
+		<Model:SubjectModel Id="Mus" IsSelected="True" Name="Etiam" StyleName="Sem sit sociosqu pretium augue"/>
+		<Model:SubjectModel Id="Nec" IsSelected="False" Name="Hac" StyleName="Sodales viverra primis rutrum"/>
+		<Model:SubjectModel Id="Non" IsSelected="True" Name="Fusce" StyleName="Cras sociis"/>
+		<Model:SubjectModel Id="Per" IsSelected="False" Name="Leo" StyleName="Aliquam nam felis"/>
+		<Model:SubjectModel Id="Sed" IsSelected="True" Name="Ante" StyleName="Ultricies taciti venenatis vivamus vestibulum"/>
+		<Model:SubjectModel Id="Sem" IsSelected="False" Name="Arcu" StyleName="Vulputate blandit curabitur"/>
+	</ViewModels:SelectionPageViewModel.Subjects>
+	<ViewModels:SelectionPageViewModel.SelectedClass>
+		<Model:ClassModel Id="Sem" IsSelected="True" Name="Elit" StyleName="Lorem hac tortor arcu leo"/>
+	</ViewModels:SelectionPageViewModel.SelectedClass>
+</ViewModels:SelectionPageViewModel>

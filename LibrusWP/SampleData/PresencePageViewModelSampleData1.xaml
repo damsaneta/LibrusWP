@@ -1,0 +1,130 @@
+﻿<ViewModels:PresencePageViewModel xmlns:ViewModels="clr-namespace:LibrusWP.ViewModels" xmlns:Model="clr-namespace:LibrusWP.Model" Date="09/13/2015 15:38:46">
+	<ViewModels:PresencePageViewModel.Class>
+		<Model:ClassModel Id="Integer quisque est class" IsSelected="False" Name="Ante" StyleName="Maecenas phasellus"/>
+	</ViewModels:PresencePageViewModel.Class>
+	<ViewModels:PresencePageViewModel.Presences>
+		<Model:PresenceModel Date="09/13/2015 15:38:46" Id="69" Present="False" StyleName="Vestibulum per vestibulum" TextContent="Dignissim conubia arcu">
+			<Model:PresenceModel.Subject>
+				<Model:SubjectModel Id="Vestibulum commodo adipiscing consequat" IsSelected="True" Name="Mus bibendum fusce nec non" StyleName="Parturient congue convallis"/>
+			</Model:PresenceModel.Subject>
+			<Model:PresenceModel.Student>
+				<Model:StudentModel FullName="Aptent" Gender="True" Name="Curae aenean mauris vestibulum" Surname="Nunc nullam adipiscing hac" StudentId="80">
+					<Model:StudentModel.Class>
+						<Model:ClassModel Id="Praesent amet accumsan" IsSelected="False" Name="Arcu non" StyleName="Etiam vestibulum blandit auctor ante"/>
+					</Model:StudentModel.Class>
+				</Model:StudentModel>
+			</Model:PresenceModel.Student>
+		</Model:PresenceModel>
+		<Model:PresenceModel Date="09/13/2015 15:38:46" Id="44" Present="False" StyleName="Erat nam dolor" TextContent="Libero augue ligula habitant">
+			<Model:PresenceModel.Subject>
+				<Model:SubjectModel Id="Proin enim" IsSelected="True" Name="Fringilla lectus parturient faucibus" StyleName="Habitasse hendrerit"/>
+			</Model:PresenceModel.Subject>
+			<Model:PresenceModel.Student>
+				<Model:StudentModel FullName="Est auctor" Gender="True" Name="Diam eget dictumst sed elementum" Surname="Sem cursus" StudentId="37">
+					<Model:StudentModel.Class>
+						<Model:ClassModel Id="Facilisi elit facilisis sit morbi" IsSelected="False" Name="Per" StyleName="Fermentum adipiscing nulla"/>
+					</Model:StudentModel.Class>
+				</Model:StudentModel>
+			</Model:PresenceModel.Student>
+		</Model:PresenceModel>
+		<Model:PresenceModel Date="09/13/2015 15:38:46" Id="78" Present="False" StyleName="Vestibulum mauris mus nec adipiscing" TextContent="Mattis euismod orci vestibulum">
+			<Model:PresenceModel.Subject>
+				<Model:SubjectModel Id="Nunc egestas penatibus" IsSelected="True" Name="Lacus odio" StyleName="Hac leo porttitor tincidunt parturient"/>
+			</Model:PresenceModel.Subject>
+			<Model:PresenceModel.Student>
+				<Model:StudentModel FullName="Ante arcu" Gender="True" Name="Fames dapibus vestibulum inceptos vestibulum" Surname="Litora himenaeos sed interdum" StudentId="30">
+					<Model:StudentModel.Class>
+						<Model:ClassModel Id="Magnis lobortis nibh" IsSelected="False" Name="Sed" StyleName="Justo nisi est nisl"/>
+					</Model:StudentModel.Class>
+				</Model:StudentModel>
+			</Model:PresenceModel.Student>
+		</Model:PresenceModel>
+		<Model:PresenceModel Date="09/13/2015 15:38:46" Id="19" Present="False" StyleName="Pulvinar duis sem sit" TextContent="Adipiscing morbi cras parturient lacinia">
+			<Model:PresenceModel.Subject>
+				<Model:SubjectModel Id="Vulputate ornare platea curabitur metus" IsSelected="True" Name="Primis iaculis quam" StyleName="Placerat quis vestibulum phasellus urna"/>
+			</Model:PresenceModel.Subject>
+			<Model:PresenceModel.Student>
+				<Model:StudentModel FullName="Diam" Gender="True" Name="Non feugiat mollis lorem tristique" Surname="Pede per" StudentId="18">
+					<Model:StudentModel.Class>
+						<Model:ClassModel Id="Parturient massa vestibulum" IsSelected="False" Name="Diam" StyleName="Venenatis sed"/>
+					</Model:StudentModel.Class>
+				</Model:StudentModel>
+			</Model:PresenceModel.Student>
+		</Model:PresenceModel>
+		<Model:PresenceModel Date="09/13/2015 15:38:46" Id="97" Present="False" StyleName="Aliquam sed suscipit" TextContent="Parturient nam">
+			<Model:PresenceModel.Subject>
+				<Model:SubjectModel Id="Consequat sodales viverra convallis" IsSelected="True" Name="Sagittis senectus" StyleName="Purus risus sociosqu vel adipiscing"/>
+			</Model:PresenceModel.Subject>
+			<Model:PresenceModel.Student>
+				<Model:StudentModel FullName="Eget" Gender="True" Name="Nunc neque" Surname="Laoreet netus natoque vestibulum amet" StudentId="92">
+					<Model:StudentModel.Class>
+						<Model:ClassModel Id="Ante arcu rutrum nulla pretium" IsSelected="False" Name="Eget sem" StyleName="Diam vestibulum"/>
+					</Model:StudentModel.Class>
+				</Model:StudentModel>
+			</Model:PresenceModel.Student>
+		</Model:PresenceModel>
+		<Model:PresenceModel Date="09/13/2015 15:38:46" Id="83" Present="False" StyleName="Taciti eleifend enim blandit non" TextContent="Bibendum elit dictumst">
+			<Model:PresenceModel.Subject>
+				<Model:SubjectModel Id="Praesent vestibulum" IsSelected="True" Name="Mus eget curae" StyleName="Nec accumsan"/>
+			</Model:PresenceModel.Subject>
+			<Model:PresenceModel.Student>
+				<Model:StudentModel FullName="Class" Gender="True" Name="Velit dis vitae" Surname="Est vestibulum integer hac" StudentId="10">
+					<Model:StudentModel.Class>
+						<Model:ClassModel Id="Torquent aliquam ultrices vehicula" IsSelected="False" Name="Elit" StyleName="Maecenas semper sociis aliquet class"/>
+					</Model:StudentModel.Class>
+				</Model:StudentModel>
+			</Model:PresenceModel.Student>
+		</Model:PresenceModel>
+		<Model:PresenceModel Date="09/13/2015 15:38:46" Id="96" Present="False" StyleName="Habitant vestibulum varius" TextContent="Faucibus sed vestibulum dis est">
+			<Model:PresenceModel.Subject>
+				<Model:SubjectModel Id="Parturient facilisis nibh vestibulum nulla" IsSelected="True" Name="Vestibulum dapibus adipiscing nisi" StyleName="Parturient turpis nam facilisi nisl"/>
+			</Model:PresenceModel.Subject>
+			<Model:PresenceModel.Student>
+				<Model:StudentModel FullName="Congue" Gender="True" Name="Erat per donec tellus tempor" Surname="Etiam adipiscing sed" StudentId="35">
+					<Model:StudentModel.Class>
+						<Model:ClassModel Id="Tempus fusce" IsSelected="False" Name="Sit" StyleName="Vel tortor morbi"/>
+					</Model:StudentModel.Class>
+				</Model:StudentModel>
+			</Model:PresenceModel.Student>
+		</Model:PresenceModel>
+		<Model:PresenceModel Date="09/13/2015 15:38:46" Id="59" Present="False" StyleName="Congue cursus parturient felis vestibulum" TextContent="Adipiscing per pharetra auctor">
+			<Model:PresenceModel.Subject>
+				<Model:SubjectModel Id="Dolor fames nec" IsSelected="True" Name="Mauris habitasse lobortis nullam" StyleName="Nascetur aptent gravida non iaculis"/>
+			</Model:PresenceModel.Subject>
+			<Model:PresenceModel.Student>
+				<Model:StudentModel FullName="Cursus elit" Gender="True" Name="Proin nunc inceptos" Surname="Aenean hac fermentum" StudentId="83">
+					<Model:StudentModel.Class>
+						<Model:ClassModel Id="Orci interdum" IsSelected="False" Name="Vel nam" StyleName="Leo feugiat mus"/>
+					</Model:StudentModel.Class>
+				</Model:StudentModel>
+			</Model:PresenceModel.Student>
+		</Model:PresenceModel>
+		<Model:PresenceModel Date="09/13/2015 15:38:46" Id="97" Present="False" StyleName="Luctus posuere" TextContent="Sociosqu vel urna nam">
+			<Model:PresenceModel.Subject>
+				<Model:SubjectModel Id="Magna ligula" IsSelected="True" Name="Massa natoque sit" StyleName="Litora quis imperdiet"/>
+			</Model:PresenceModel.Subject>
+			<Model:PresenceModel.Student>
+				<Model:StudentModel FullName="Enim" Gender="True" Name="Hendrerit placerat ipsum" Surname="Justo lacus quam vestibulum adipiscing" StudentId="41">
+					<Model:StudentModel.Class>
+						<Model:ClassModel Id="Vestibulum dictum sed pulvinar" IsSelected="False" Name="Sed enim" StyleName="Libero laoreet lorem sagittis senectus"/>
+					</Model:StudentModel.Class>
+				</Model:StudentModel>
+			</Model:PresenceModel.Student>
+		</Model:PresenceModel>
+		<Model:PresenceModel Date="09/13/2015 15:38:46" Id="23" Present="False" StyleName="Arcu vestibulum diam porttitor" TextContent="Parturient penatibus">
+			<Model:PresenceModel.Subject>
+				<Model:SubjectModel Id="Mus malesuada" IsSelected="True" Name="Ante nostra" StyleName="Vehicula nec"/>
+			</Model:PresenceModel.Subject>
+			<Model:PresenceModel.Student>
+				<Model:StudentModel FullName="Curae dictum" Gender="True" Name="Suscipit sed potenti" Surname="Magnis mattis torquent pretium dis" StudentId="10">
+					<Model:StudentModel.Class>
+						<Model:ClassModel Id="Ultrices mauris hac mollis" IsSelected="False" Name="Erat dis" StyleName="Amet montes adipiscing"/>
+					</Model:StudentModel.Class>
+				</Model:StudentModel>
+			</Model:PresenceModel.Student>
+		</Model:PresenceModel>
+	</ViewModels:PresencePageViewModel.Presences>
+	<ViewModels:PresencePageViewModel.Subject>
+		<Model:SubjectModel Id="Cras nam" IsSelected="True" Name="Sed aliquam" StyleName="Duis dis"/>
+	</ViewModels:PresencePageViewModel.Subject>
+</ViewModels:PresencePageViewModel>

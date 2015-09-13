@@ -820,16 +820,19 @@ namespace LibrusWP.Logic
         //}
 
 
-        public void SavePresences(IList<PresenceModel> list)
+        public async Task SavePresences(IList<PresenceModel> list)
         {
-
-            foreach (PresenceModel c in list)
+            await Task.Run(() =>
             {
-                if (this.presences.Where(x => x.Date.Date == c.Date.Date && x.Subject.Id == c.Subject.Id && x.Student.FullName == c.Student.FullName).FirstOrDefault() == null)
+                foreach (PresenceModel c in list)
                 {
-                    this.presences.Add(c);
+                    if (this.presences.Where(x => x.Date.Date == c.Date.Date && x.Subject.Id == c.Subject.Id && x.Student.FullName == c.Student.FullName).FirstOrDefault() == null)
+                    {
+                        this.presences.Add(c);
+                    }
                 }
-            }
+                return;
+            });
         }
 
 
@@ -878,6 +881,17 @@ namespace LibrusWP.Logic
         public IList<TimeTableModel> GetAllTimetables()
         {
             return this.timeTables;
+        }
+
+
+        public Task Test()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<string> Test2()
+        {
+            throw new NotImplementedException();
         }
     }
 }
