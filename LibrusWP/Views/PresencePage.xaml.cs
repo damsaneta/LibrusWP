@@ -62,7 +62,7 @@ namespace LibrusWP.Views
             }
         }
 
-        private void ZapiszButtonClick(object sender, RoutedEventArgs e)
+        private void SaveButtonClick(object sender, RoutedEventArgs e)
         {
             this.manager.SavePresences(this.ViewModel.Presences);
             NavigationService.RemoveBackEntry();

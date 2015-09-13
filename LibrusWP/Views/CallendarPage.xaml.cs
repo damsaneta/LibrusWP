@@ -58,7 +58,6 @@ namespace LibrusWP.Views
 
         private void AcceptClick(object sender, RoutedEventArgs e)
         {
-
             var z = this.datePicker.Value.ToString() + "/" + this.value;
             NavigationService.Navigate(new Uri("/Views/PresencePage.xaml?msg=" + z, UriKind.Relative));
             //NavigationService.Navigate(new Uri("/Views/SelectionPage.xaml", UriKind.Relative));

@@ -5,25 +5,21 @@ namespace LibrusWP.Logic
 {
     public interface ILibrusManager
     {
-        List<ClassModel> GetAllClasses(); //done
-        List<SubjectModel> GetAllSubjects(); //done
-        IList<SubjectModel> GetSubjectsForClass(ClassModel selectedClass); // done
-        SubjectModel GetSubjectById(string id); // done
-        ClassModel GetClassById(string id); //done
-        IList<StudentModel> GetStudentsByClass(string id); // done
-        TimeTableModel GetTimeTable( ClassModel clazz, SubjectModel subject);// done
-        StudentModel GetStudentById(int fullName);//done
+        List<ClassModel> GetAllClasses(); 
+        List<SubjectModel> GetAllSubjects(); 
+        IList<SubjectModel> GetSubjectsForClass(ClassModel selectedClass); 
+        SubjectModel GetSubjectById(string id); 
+        ClassModel GetClassById(string id); 
+        IList<StudentModel> GetStudentsByClass(string id); 
+        TimeTableModel GetTimeTable( ClassModel clazz, SubjectModel subject);
+        StudentModel GetStudentById(int fullName);
         IList<StudentModel> GetAllStudents();
         IList<TimeTableModel> GetAllTimetables();
-        IList<PresenceModel> GetAllPresences();
-        
+        IList<PresenceModel> GetAllPresences();       
         IList<PresenceModel> GetPresencesByStudentAndSubject(int p1, string p2);
-        TimeTableModel GetTimeTableById(int timetableId);//done
-        //IList<TimeTableModel> GetTimeTableBySubjectAndClass(SubjectModel subjectModel, ClassModel classModel);// niepotrzebne
+        TimeTableModel GetTimeTableById(int timetableId);     
         IList<PresenceModel> GetPresencesByStudentsSubjectDate(IList<StudentModel> students, SubjectModel subjectModel, DateTime dateTime);
         void SavePresences(IList<PresenceModel> list);
-       
 
-        //DateTime FindLastPresencesByClassAndSubject(string p1, string p2);
     }
 }
