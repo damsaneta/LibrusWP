@@ -30,7 +30,7 @@ namespace LibrusWP.Views
             base.OnNavigatedTo(e);
             string value = string.Empty;
 
-            if (NavigationContext.QueryString.TryGetValue("msg", out value) )
+            if (NavigationContext.QueryString.TryGetValue("msg", out value))
             {
                 string[] tab = value.Split(new char[] { '/' });
                 this.DataContext = new PresencePageViewModel(LibrusFactory.CreateLibrusManager(), tab[0], tab[1], tab[2]);
@@ -38,25 +38,26 @@ namespace LibrusWP.Views
             if (this.State.ContainsKey("presences"))
             {
                 string[] tab = ((string)this.State["presences"]).Split(new char[] { '/' });
-                int i =0;
-                foreach(var p in this.ViewModel.Presences)
+                int i = 0;
+                foreach (var p in this.ViewModel.Presences)
                 {
-                    p.Present =  Convert.ToBoolean(tab[i]);
+                    p.Present = Convert.ToBoolean(tab[i]);
                     i++;
                 }
-              }
+            }
 
         }
+
         protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
         {
             base.OnNavigatedFrom(e);
             if (e.NavigationMode != System.Windows.Navigation.NavigationMode.Back
             && e.NavigationMode != System.Windows.Navigation.NavigationMode.Forward)
             {
-                string presences= string.Empty;
-                foreach(var p in this.ViewModel.Presences)
+                string presences = string.Empty;
+                foreach (var p in this.ViewModel.Presences)
                 {
-                    presences = presences + p.Present.ToString() +"/";
+                    presences = presences + p.Present.ToString() + "/";
                 }
                 this.State["presences"] = presences;
             }

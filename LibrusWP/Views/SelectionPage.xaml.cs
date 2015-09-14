@@ -35,6 +35,7 @@ namespace LibrusWP.Views
             var value = this.ViewModel.SelectedClass.Id + "/" + this.ViewModel.SelectedSubject.Id;
             NavigationService.Navigate(new Uri("/Views/StudentsListPage.xaml?summary=" + value, UriKind.Relative));
         }
+
         protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
         {
             base.OnNavigatedFrom(e);
@@ -47,6 +48,7 @@ namespace LibrusWP.Views
                 this.State["selectedSubject"] = this.ViewModel.SelectedSubject.Id;
             }
         }
+
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
@@ -59,18 +61,12 @@ namespace LibrusWP.Views
             if (this.State.ContainsKey("selectedSubject"))
             {
                 this.ViewModel.RefreshSubjects();
-                this.ViewModel.SelectSubject2( (string)this.State["selectedSubject"]);
-                //this.ViewModel.RefreshSubjects();
-                //this.ViewModel.Subjects[0].IsSelected = false;
-                //this.ViewModel.Subjects.Where(x => x.Id == (string)this.State["selectedSubject"]).SingleOrDefault().IsSelected = true;
-                //var t = this.ViewModel.SelectedSubject;
+                this.ViewModel.SelectSubject2((string)this.State["selectedSubject"]);
             }
             if (this.State.ContainsKey("pivotItem"))
             {
                 this.pivot.SelectedIndex = Convert.ToInt32(this.State["pivotItem"]);
             }
-
-
         }
 
         private void ClassButtonClick(object sender, RoutedEventArgs e)

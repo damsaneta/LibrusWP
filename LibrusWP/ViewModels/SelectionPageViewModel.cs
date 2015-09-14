@@ -53,12 +53,6 @@ namespace LibrusWP.ViewModels
                 this.SelectSubject(this.Subjects[0]);
             }
             
-            //this.Subjects[0].IsSelected = true;
-            //if (this.PropertyChanged != null)
-            //{
-            //    this.PropertyChanged(this, new PropertyChangedEventArgs("SelectedClass"));
-            //    this.PropertyChanged(this, new PropertyChangedEventArgs("SelectedSubject"));
-            //}
         }
 
         public void SelectClass(ClassModel selectedItem)

@@ -12,7 +12,7 @@ using System.Windows.Input;
 
 namespace LibrusWP.ViewModels
 {
-    public class PresencePageViewModel: INotifyPropertyChanged
+    public class PresencePageViewModel : INotifyPropertyChanged
     {
         private readonly ILibrusManager manager;
 
@@ -23,12 +23,12 @@ namespace LibrusWP.ViewModels
             this.Class = this.manager.GetClassById(clazz);
             this.Subject = this.manager.GetSubjectById(subject);
             var students = this.manager.GetStudentsByClass(this.Class.Id);
-            var timetable = this.manager.GetTimeTable( this.Class, this.Subject);
+            var timetable = this.manager.GetTimeTable(this.Class, this.Subject);
             this.Presences = this.manager.GetPresencesByStudentsSubjectDate(students, this.Subject, this.Date);
             this.ChangePresenceSelection = new ChangePresenceSelectionCommand(this);
         }
 
-        public ICommand ChangePresenceSelection {get; private set;}
+        public ICommand ChangePresenceSelection { get; private set; }
 
         public DateTime Date { get; private set; }
 

@@ -12,14 +12,14 @@ namespace LibrusWP.ViewModels
     public class StudentsListPageViewModel
     {
         private ILibrusManager manager;
-        private  string a;
+        private string a;
 
         public StudentsListPageViewModel(ILibrusManager manager, string clazz, string subject)
         {
             this.manager = manager;
             this.Subject = this.manager.GetSubjectById(subject);
-            this.Class=this.manager.GetClassById(clazz);
-            this.Students= manager.GetStudentsByClass(this.Class.Id);
+            this.Class = this.manager.GetClassById(clazz);
+            this.Students = manager.GetStudentsByClass(this.Class.Id);
         }
 
         public IList<StudentModel> Students { get; private set; }

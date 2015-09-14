@@ -16,6 +16,7 @@ namespace LibrusWP.Views
         private readonly ILibrusManager manager = LibrusFactory.CreateLibrusManager();
 
         string value = string.Empty;
+
         public CallendarPage()
         {
             InitializeComponent();
@@ -47,20 +48,16 @@ namespace LibrusWP.Views
                 if (e.NavigationMode != System.Windows.Navigation.NavigationMode.Back
                 && e.NavigationMode != System.Windows.Navigation.NavigationMode.Forward)
                 {
-
                     this.State["date"] = this.datePicker.Value.ToString();
                 }
             }
 
         }
 
-
-
         private void AcceptClick(object sender, RoutedEventArgs e)
         {
             var z = this.datePicker.Value.ToString() + "/" + this.value;
             NavigationService.Navigate(new Uri("/Views/PresencePage.xaml?msg=" + z, UriKind.Relative));
-            //NavigationService.Navigate(new Uri("/Views/SelectionPage.xaml", UriKind.Relative));
         }
     }
 }
