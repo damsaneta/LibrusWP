@@ -44,9 +44,9 @@ namespace LibrusWP.Logic
 
         public IList<SubjectModel> GetSubjectsForClass(ClassModel selectedClass)
         {
-            
+
             var timeTables = this.timeTableRepository.GetAllByClass(selectedClass.Id);
-            IList<SubjectEntity> subjects =  timeTables.Select(x => x.Subject).ToList();
+            IList<SubjectEntity> subjects = timeTables.Select(x => x.Subject).ToList();
             IList<SubjectModel> result = subjects.Select(x => new SubjectModel(x.Id, x.Name)).ToList();
             return result;
 
@@ -67,7 +67,7 @@ namespace LibrusWP.Logic
         public IList<StudentModel> GetStudentsByClass(string id)
         {
             var students = this.studentRepository.GetAllByClass(id);
-            return students.Select(x => new StudentModel(x.Id, x.Name, x.Surname, new ClassModel(x.Class.Id),x.Gender))
+            return students.Select(x => new StudentModel(x.Id, x.Name, x.Surname, new ClassModel(x.Class.Id), x.Gender))
                 .OrderBy(x => x.Surname).ThenBy(x => x.Name).ToList();
         }
 
@@ -77,15 +77,15 @@ namespace LibrusWP.Logic
             return new TimeTableModel(timetable.Id, timetable.Day, new ClassModel(timetable.Class.Id),
                 new SubjectModel(timetable.Subject.Id, timetable.Subject.Name));
         }
-  
+
         public StudentModel GetStudentById(int id)
         {
-            StudentEntity student = this.studentRepository.GetById(id); 
+            StudentEntity student = this.studentRepository.GetById(id);
             return new StudentModel(student.Id, student.Name, student.Surname, new ClassModel(student.Class.Id)
                 , student.Gender);
-            
+
         }
-        
+
         public IList<PresenceModel> GetPresencesByStudentAndSubject(int studentId, string subjectId)
         {
             IList<PresenceEntity> presences = this.presenceRepository.GetAllByStudentAndSubject(studentId, subjectId);
@@ -97,14 +97,14 @@ namespace LibrusWP.Logic
         public TimeTableModel GetTimeTableById(int timetableId)
         {
             TimeTableEntity timetable = this.timeTableRepository.GetById(timetableId);
-            return new TimeTableModel(timetable.Id,timetable.Day, new ClassModel(timetable.Class.Id)
+            return new TimeTableModel(timetable.Id, timetable.Day, new ClassModel(timetable.Class.Id)
                 , new SubjectModel(timetable.Subject.Id, timetable.Subject.Name));
         }
- 
+
         public IList<PresenceModel> GetPresencesByStudentsSubjectDate(IList<StudentModel> students, SubjectModel subjectModel, DateTime dateTime)
         {
             IList<PresenceModel> list = new List<PresenceModel>();
-            foreach(StudentModel student in students)
+            foreach (StudentModel student in students)
             {
                 PresenceEntity presence = this.presenceRepository.GetByStudentAndSubjectAndDate(student.StudentId, subjectModel.Id, dateTime);
                 list.Add(new PresenceModel(student, subjectModel, dateTime, presence));
@@ -113,36 +113,56 @@ namespace LibrusWP.Logic
             return list;
         }
 
-        public async Task SavePresences(IList<PresenceModel> list)
+        public void SavePresences(IList<PresenceModel> list)
         {
-            await Task.Run(() =>
-            {
-              //  Thread.Sleep(10000);
-                foreach (var model in list)
-                {
-                    if (model.Id != 0)
-                    {
-                        presenceRepository.Update(model.Id, model.Present);
-                    }
-                    else
-                    {
-                        var student = this.studentRepository.GetById(model.Student.StudentId);
-                        var subject = this.subjectRepository.GetById(model.Subject.Id);
-                        var entity = new PresenceEntity(student, subject, model.Date, model.Present);
-                        presenceRepository.AddNew(entity);
-                    }
 
+            foreach (var model in list)
+            {
+                if (model.Id != 0)
+                {
+                    presenceRepository.Update(model.Id, model.Present);
                 }
-                return;
-            });
+                else
+                {
+                    var student = this.studentRepository.GetById(model.Student.StudentId);
+                    var subject = this.subjectRepository.GetById(model.Subject.Id);
+                    var entity = new PresenceEntity(student, subject, model.Date, model.Present);
+                    presenceRepository.AddNew(entity);
+                }
+
+            }
+
         }
+        //public async Task SavePresences(IList<PresenceModel> list)
+        //{
+        //    await Task.Run(() =>
+        //    {
+        //       // Thread.Sleep(10000);
+        //        foreach (var model in list)
+        //        {
+        //            if (model.Id != 0)
+        //            {
+        //                presenceRepository.Update(model.Id, model.Present);
+        //            }
+        //            else
+        //            {
+        //                var student = this.studentRepository.GetById(model.Student.StudentId);
+        //                var subject = this.subjectRepository.GetById(model.Subject.Id);
+        //                var entity = new PresenceEntity(student, subject, model.Date, model.Present);
+        //                presenceRepository.AddNew(entity);
+        //            }
+
+        //        }
+        //        return;
+        //    });
+        //}
 
 
         public IList<StudentModel> GetAllStudents()
         {
             IList<StudentEntity> students = studentRepository.GetAll();
-            return students.Select(x => new StudentModel(x.Id, x.Name, x.Surname, new ClassModel(x.Class.Id),x.Gender))
-                .OrderBy(x=> x.Surname).ThenBy(x => x.Name).ToList();
+            return students.Select(x => new StudentModel(x.Id, x.Name, x.Surname, new ClassModel(x.Class.Id), x.Gender))
+                .OrderBy(x => x.Surname).ThenBy(x => x.Name).ToList();
 
         }
 

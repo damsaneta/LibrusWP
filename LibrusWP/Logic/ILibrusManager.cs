@@ -20,6 +20,6 @@ namespace LibrusWP.Logic
         IList<PresenceModel> GetPresencesByStudentAndSubject(int p1, string p2);
         TimeTableModel GetTimeTableById(int timetableId);     
         IList<PresenceModel> GetPresencesByStudentsSubjectDate(IList<StudentModel> students, SubjectModel subjectModel, DateTime dateTime);
-        Task SavePresences(IList<PresenceModel> list);
+        void SavePresences(IList<PresenceModel> list);
     }
 }

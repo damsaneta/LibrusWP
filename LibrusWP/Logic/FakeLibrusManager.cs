@@ -24,23 +24,23 @@ namespace LibrusWP.Logic
             this.classes.Add(new ClassModel("IC"));
 
             var clazz = this.GetClassById("IA");
-            this.students.Add(new StudentModel(1,"Aneta", "Dams", clazz, true));
-            this.students.Add(new StudentModel(2,"Karolina", "Kowalska", clazz, true));
-            this.students.Add(new StudentModel(3,"Anna", "Nowak", clazz, true));
-            this.students.Add(new StudentModel(4,"Mateusz", "Brzeziński", clazz, false));
-            this.students.Add(new StudentModel(5,"Justyna", "Karpińska", clazz, true));
+            this.students.Add(new StudentModel(1, "Aneta", "Dams", clazz, true));
+            this.students.Add(new StudentModel(2, "Karolina", "Kowalska", clazz, true));
+            this.students.Add(new StudentModel(3, "Anna", "Nowak", clazz, true));
+            this.students.Add(new StudentModel(4, "Mateusz", "Brzeziński", clazz, false));
+            this.students.Add(new StudentModel(5, "Justyna", "Karpińska", clazz, true));
             var clazz1 = this.GetClassById("IB");
-            this.students.Add(new StudentModel(6,"Maciej", "Sikorski", clazz1, false));
-            this.students.Add(new StudentModel(7,"Paweł", "Nowakowski", clazz1, false));
-            this.students.Add(new StudentModel(8,"Adrian", "Rydzyński", clazz1, false));
-            this.students.Add(new StudentModel(9,"Monika", "Kwiatkowska", clazz1, true));
+            this.students.Add(new StudentModel(6, "Maciej", "Sikorski", clazz1, false));
+            this.students.Add(new StudentModel(7, "Paweł", "Nowakowski", clazz1, false));
+            this.students.Add(new StudentModel(8, "Adrian", "Rydzyński", clazz1, false));
+            this.students.Add(new StudentModel(9, "Monika", "Kwiatkowska", clazz1, true));
             var clazz2 = this.GetClassById("IC");
-            this.students.Add(new StudentModel(10,"Anna", "Mrozowska", clazz2, true));
-            this.students.Add(new StudentModel(11,"Kamila", "Boruta", clazz2, true));
-            this.students.Add(new StudentModel(12,"Andrzej", "Gutowski", clazz2, false));
-            this.students.Add(new StudentModel(13,"Szymon", "Kołodziej", clazz2, false));
+            this.students.Add(new StudentModel(10, "Anna", "Mrozowska", clazz2, true));
+            this.students.Add(new StudentModel(11, "Kamila", "Boruta", clazz2, true));
+            this.students.Add(new StudentModel(12, "Andrzej", "Gutowski", clazz2, false));
+            this.students.Add(new StudentModel(13, "Szymon", "Kołodziej", clazz2, false));
 
-            
+
             this.subjects.Add(new SubjectModel("AM", "Analiza Matematyczna"));
             this.subjects.Add(new SubjectModel("MD", "Matematyka Dyskretna"));
             this.subjects.Add(new SubjectModel("AiSD", "Algorytmy i struktury danych"));
@@ -57,722 +57,722 @@ namespace LibrusWP.Logic
             this.subjects.Add(new SubjectModel("TO", "Teoria Obliczalności"));
             int id = 0;
             Random gen = new Random();
-                id++;
-                var date = "środa";
-                var table =  new TimeTableModel(id, date, this.GetClassById("IA"), this.GetSubjectById("AM"));
-                this.timeTables.Add(table);
-                var start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++ )
-                {
-                    var d = start.AddDays(7 * t);
-
-                    foreach (StudentModel student in this.GetStudentsByClass("IA"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
-
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
-                }
-                id++;
-                table = new TimeTableModel(id, date, this.GetClassById("IB"), this.GetSubjectById("AiSD"));
-                this.timeTables.Add(table);
-                 start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
-                {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IB"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
-
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
-                }
-                id++;
-        
-                table = new TimeTableModel(id, date, this.GetClassById("IC"), this.GetSubjectById("AL"));
-                this.timeTables.Add(table);
-                 start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
-                {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IC"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
-
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
-                }
-                id++;
-                table = new TimeTableModel(id, date, this.GetClassById("IA"), this.GetSubjectById("MD"));
-                this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
-                {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IA"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
-
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
-                }
-                id++;
-                table =new TimeTableModel(id, date, this.GetClassById("IB"), this.GetSubjectById("SO"));
-                this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
-                {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IB"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
-
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
-                }
-                id++;
-                table = new TimeTableModel(id, date, this.GetClassById("IC"), this.GetSubjectById("SOS"));
-                this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
-                {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IC"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
-
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
-                }
-                id++;
-  
-                table = new TimeTableModel(id, date, this.GetClassById("IA"), this.GetSubjectById("SO"));
-                this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
-                {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IA"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
-
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
-                }
-                id++;
-                table = new TimeTableModel(id, date, this.GetClassById("IB"), this.GetSubjectById("TJF"));
-                this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
-                {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IB"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
-
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
-                }
-                id++;
-                table = new TimeTableModel(id, date, this.GetClassById("IC"), this.GetSubjectById("PB"));
-                this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
-                {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IC"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
-
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
-                }
-     
-                id++;
-                var date1 = "czwartek";
-                table = new TimeTableModel(id, date1, this.GetClassById("IA"), this.GetSubjectById("PI"));
-                this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
-                {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IA"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
-
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
-                }
-                id++;
-                table = new TimeTableModel(id, date1, this.GetClassById("IB"), this.GetSubjectById("PII"));
-                this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
-                {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IB"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
-
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
-                }
-                id++;
-                table = new TimeTableModel(id, date1, this.GetClassById("IC"), this.GetSubjectById("AiSD"));
-                this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
-                {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IC"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
-
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
-                }
-                id++;
-
-                table = new TimeTableModel(id, date1, this.GetClassById("IA"), this.GetSubjectById("AL"));
-                this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
-                {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IA"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
-
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
-                }
-                id++;
-                table = new TimeTableModel(id, date1, this.GetClassById("IB"), this.GetSubjectById("PB"));
-                this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
-                {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IB"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
-
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
-                }
-                id++;
-                table = new TimeTableModel(id, date1, this.GetClassById("IC"), this.GetSubjectById("PI"));
-                this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
-                {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IC"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
-
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
-                }
-                id++;
-
-                table = new TimeTableModel(id, date1, this.GetClassById("IA"), this.GetSubjectById("PB"));
-                this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
-                {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IA"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
-
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
-                }
-                id++;
-                table = new TimeTableModel(id, date1, this.GetClassById("IB"), this.GetSubjectById("SOS"));
-                this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
-                {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IB"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
-
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
-                }
-                id++;
-                table = new TimeTableModel(id, date1, this.GetClassById("IC"), this.GetSubjectById("AM"));
-                this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
-                {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IC"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
-
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
-                }
-           
-                id++;
-                var date2 = "piątek";
-                table =new TimeTableModel(id, date2, this.GetClassById("IA"), this.GetSubjectById("AiSD"));
-                this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 3, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
-                {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IA"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
-
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
-                }
-                id++;
-                table = new TimeTableModel(id, date2, this.GetClassById("IB"), this.GetSubjectById("PI"));
-                this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 3, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
-                {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IB"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
-
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
-                }
-                id++;
-                table = new TimeTableModel(id, date2, this.GetClassById("IC"), this.GetSubjectById("PIII"));
-                this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 3, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
-                {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IC"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
-
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
-                }
-                id++;
-
-                table = new TimeTableModel(id, date2, this.GetClassById("IA"), this.GetSubjectById("TJF"));
-                this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 3, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
-                {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IA"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
-
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
-                }
-                id++;
-                table =new TimeTableModel(id, date2, this.GetClassById("IB"), this.GetSubjectById("AM"));
+            id++;
+            var date = "środa";
+            var table = new TimeTableModel(id, date, this.GetClassById("IA"), this.GetSubjectById("AM"));
             this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 3, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
-                {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IB"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
+            var start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
 
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
-                }
-                id++;
-                table =new TimeTableModel(id, date2, this.GetClassById("IC"), this.GetSubjectById("LG"));
-                this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 3, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
+                foreach (StudentModel student in this.GetStudentsByClass("IA"))
                 {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IC"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
 
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
                 }
-                id++;
-        
-                id++;
-                var date3 = "poniedziałek";
-                table = new TimeTableModel(id, date3, this.GetClassById("IA"), this.GetSubjectById("LG"));
-                this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 6, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
-                {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IA"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
-
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
-                }
-                id++;
-                table = new TimeTableModel(id, date3, this.GetClassById("IB"), this.GetSubjectById("AL"));
+            }
+            id++;
+            table = new TimeTableModel(id, date, this.GetClassById("IB"), this.GetSubjectById("AiSD"));
             this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 6, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
+            start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IB"))
                 {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IB"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
 
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
                 }
-                id++;
-                table = new TimeTableModel(id, date3, this.GetClassById("IC"), this.GetSubjectById("MD"));
-                this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 6, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
-                {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IC"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
+            }
+            id++;
 
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
-                }
-                id++;
-
-                table = new TimeTableModel(id, date3, this.GetClassById("IA"), this.GetSubjectById("PIII"));
+            table = new TimeTableModel(id, date, this.GetClassById("IC"), this.GetSubjectById("AL"));
             this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 6, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
+            start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IC"))
                 {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IA"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
 
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
                 }
-                id++;
-               table = new TimeTableModel(id, date3, this.GetClassById("IB"), this.GetSubjectById("TO"));
+            }
+            id++;
+            table = new TimeTableModel(id, date, this.GetClassById("IA"), this.GetSubjectById("MD"));
             this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 6, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
+            start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IA"))
                 {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IB"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
 
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
                 }
-                id++;
-                table = new TimeTableModel(id, date3, this.GetClassById("IC"), this.GetSubjectById("SO"));
-                this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 6, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
-                {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IC"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
-
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
-                }
-                id++;
-
-            
-         
-                id++;
-                var date4 = "wtorek";
-                table = new TimeTableModel(id, date4, this.GetClassById("IA"), this.GetSubjectById("TO"));
+            }
+            id++;
+            table = new TimeTableModel(id, date, this.GetClassById("IB"), this.GetSubjectById("SO"));
             this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 7, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
+            start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IB"))
                 {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IA"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
 
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
                 }
-                id++;
-                table = new TimeTableModel(id, date4, this.GetClassById("IB"), this.GetSubjectById("PIII"));
+            }
+            id++;
+            table = new TimeTableModel(id, date, this.GetClassById("IC"), this.GetSubjectById("SOS"));
             this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 7, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
+            start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IC"))
                 {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IB"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
 
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
                 }
-                id++;
-                table = new TimeTableModel(id, date4, this.GetClassById("IC"), this.GetSubjectById("LG"));
+            }
+            id++;
+
+            table = new TimeTableModel(id, date, this.GetClassById("IA"), this.GetSubjectById("SO"));
             this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 7, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
+            start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IA"))
                 {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IC"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
 
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
                 }
-                id++;
-
-                table = new TimeTableModel(id, date4, this.GetClassById("IA"), this.GetSubjectById("SOS"));
+            }
+            id++;
+            table = new TimeTableModel(id, date, this.GetClassById("IB"), this.GetSubjectById("TJF"));
             this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 7, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
+            start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IB"))
                 {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IA"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
 
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
                 }
-                id++;
-                table = new TimeTableModel(id, date4, this.GetClassById("IB"), this.GetSubjectById("LG"));
+            }
+            id++;
+            table = new TimeTableModel(id, date, this.GetClassById("IC"), this.GetSubjectById("PB"));
             this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 7, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
+            start = new DateTime(2014, 10, 1, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IC"))
                 {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IB"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
 
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
                 }
-                id++;
-                table = new TimeTableModel(id, date4, this.GetClassById("IC"), this.GetSubjectById("TO"));
+            }
+
+            id++;
+            var date1 = "czwartek";
+            table = new TimeTableModel(id, date1, this.GetClassById("IA"), this.GetSubjectById("PI"));
             this.timeTables.Add(table);
-                start = new DateTime(2014, 10, 7, 8, 0, 0).Date;
-                for (int t = 0; t < 9; t++)
+            start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IA"))
                 {
-                    var d = start.AddDays(7 * t);
-                    foreach (StudentModel student in this.GetStudentsByClass("IC"))
-                    {
-                        PresenceModel pre = new PresenceModel(student, table.Subject, d, null); 
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
 
-                        int prob = gen.Next(100);
-                        if (prob < 80)
-                            pre.Present = true;
-                        else
-                            pre.Present = false;
-                        this.presences.Add(pre);
-                    }
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
                 }
+            }
+            id++;
+            table = new TimeTableModel(id, date1, this.GetClassById("IB"), this.GetSubjectById("PII"));
+            this.timeTables.Add(table);
+            start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IB"))
+                {
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
 
-            
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
+                }
+            }
+            id++;
+            table = new TimeTableModel(id, date1, this.GetClassById("IC"), this.GetSubjectById("AiSD"));
+            this.timeTables.Add(table);
+            start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IC"))
+                {
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
+
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
+                }
+            }
+            id++;
+
+            table = new TimeTableModel(id, date1, this.GetClassById("IA"), this.GetSubjectById("AL"));
+            this.timeTables.Add(table);
+            start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IA"))
+                {
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
+
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
+                }
+            }
+            id++;
+            table = new TimeTableModel(id, date1, this.GetClassById("IB"), this.GetSubjectById("PB"));
+            this.timeTables.Add(table);
+            start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IB"))
+                {
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
+
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
+                }
+            }
+            id++;
+            table = new TimeTableModel(id, date1, this.GetClassById("IC"), this.GetSubjectById("PI"));
+            this.timeTables.Add(table);
+            start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IC"))
+                {
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
+
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
+                }
+            }
+            id++;
+
+            table = new TimeTableModel(id, date1, this.GetClassById("IA"), this.GetSubjectById("PB"));
+            this.timeTables.Add(table);
+            start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IA"))
+                {
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
+
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
+                }
+            }
+            id++;
+            table = new TimeTableModel(id, date1, this.GetClassById("IB"), this.GetSubjectById("SOS"));
+            this.timeTables.Add(table);
+            start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IB"))
+                {
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
+
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
+                }
+            }
+            id++;
+            table = new TimeTableModel(id, date1, this.GetClassById("IC"), this.GetSubjectById("AM"));
+            this.timeTables.Add(table);
+            start = new DateTime(2014, 10, 2, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IC"))
+                {
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
+
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
+                }
+            }
+
+            id++;
+            var date2 = "piątek";
+            table = new TimeTableModel(id, date2, this.GetClassById("IA"), this.GetSubjectById("AiSD"));
+            this.timeTables.Add(table);
+            start = new DateTime(2014, 10, 3, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IA"))
+                {
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
+
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
+                }
+            }
+            id++;
+            table = new TimeTableModel(id, date2, this.GetClassById("IB"), this.GetSubjectById("PI"));
+            this.timeTables.Add(table);
+            start = new DateTime(2014, 10, 3, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IB"))
+                {
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
+
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
+                }
+            }
+            id++;
+            table = new TimeTableModel(id, date2, this.GetClassById("IC"), this.GetSubjectById("PIII"));
+            this.timeTables.Add(table);
+            start = new DateTime(2014, 10, 3, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IC"))
+                {
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
+
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
+                }
+            }
+            id++;
+
+            table = new TimeTableModel(id, date2, this.GetClassById("IA"), this.GetSubjectById("TJF"));
+            this.timeTables.Add(table);
+            start = new DateTime(2014, 10, 3, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IA"))
+                {
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
+
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
+                }
+            }
+            id++;
+            table = new TimeTableModel(id, date2, this.GetClassById("IB"), this.GetSubjectById("AM"));
+            this.timeTables.Add(table);
+            start = new DateTime(2014, 10, 3, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IB"))
+                {
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
+
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
+                }
+            }
+            id++;
+            table = new TimeTableModel(id, date2, this.GetClassById("IC"), this.GetSubjectById("LG"));
+            this.timeTables.Add(table);
+            start = new DateTime(2014, 10, 3, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IC"))
+                {
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
+
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
+                }
+            }
+            id++;
+
+            id++;
+            var date3 = "poniedziałek";
+            table = new TimeTableModel(id, date3, this.GetClassById("IA"), this.GetSubjectById("LG"));
+            this.timeTables.Add(table);
+            start = new DateTime(2014, 10, 6, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IA"))
+                {
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
+
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
+                }
+            }
+            id++;
+            table = new TimeTableModel(id, date3, this.GetClassById("IB"), this.GetSubjectById("AL"));
+            this.timeTables.Add(table);
+            start = new DateTime(2014, 10, 6, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IB"))
+                {
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
+
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
+                }
+            }
+            id++;
+            table = new TimeTableModel(id, date3, this.GetClassById("IC"), this.GetSubjectById("MD"));
+            this.timeTables.Add(table);
+            start = new DateTime(2014, 10, 6, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IC"))
+                {
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
+
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
+                }
+            }
+            id++;
+
+            table = new TimeTableModel(id, date3, this.GetClassById("IA"), this.GetSubjectById("PIII"));
+            this.timeTables.Add(table);
+            start = new DateTime(2014, 10, 6, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IA"))
+                {
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
+
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
+                }
+            }
+            id++;
+            table = new TimeTableModel(id, date3, this.GetClassById("IB"), this.GetSubjectById("TO"));
+            this.timeTables.Add(table);
+            start = new DateTime(2014, 10, 6, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IB"))
+                {
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
+
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
+                }
+            }
+            id++;
+            table = new TimeTableModel(id, date3, this.GetClassById("IC"), this.GetSubjectById("SO"));
+            this.timeTables.Add(table);
+            start = new DateTime(2014, 10, 6, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IC"))
+                {
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
+
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
+                }
+            }
+            id++;
+
+
+
+            id++;
+            var date4 = "wtorek";
+            table = new TimeTableModel(id, date4, this.GetClassById("IA"), this.GetSubjectById("TO"));
+            this.timeTables.Add(table);
+            start = new DateTime(2014, 10, 7, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IA"))
+                {
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
+
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
+                }
+            }
+            id++;
+            table = new TimeTableModel(id, date4, this.GetClassById("IB"), this.GetSubjectById("PIII"));
+            this.timeTables.Add(table);
+            start = new DateTime(2014, 10, 7, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IB"))
+                {
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
+
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
+                }
+            }
+            id++;
+            table = new TimeTableModel(id, date4, this.GetClassById("IC"), this.GetSubjectById("LG"));
+            this.timeTables.Add(table);
+            start = new DateTime(2014, 10, 7, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IC"))
+                {
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
+
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
+                }
+            }
+            id++;
+
+            table = new TimeTableModel(id, date4, this.GetClassById("IA"), this.GetSubjectById("SOS"));
+            this.timeTables.Add(table);
+            start = new DateTime(2014, 10, 7, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IA"))
+                {
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
+
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
+                }
+            }
+            id++;
+            table = new TimeTableModel(id, date4, this.GetClassById("IB"), this.GetSubjectById("LG"));
+            this.timeTables.Add(table);
+            start = new DateTime(2014, 10, 7, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IB"))
+                {
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
+
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
+                }
+            }
+            id++;
+            table = new TimeTableModel(id, date4, this.GetClassById("IC"), this.GetSubjectById("TO"));
+            this.timeTables.Add(table);
+            start = new DateTime(2014, 10, 7, 8, 0, 0).Date;
+            for (int t = 0; t < 9; t++)
+            {
+                var d = start.AddDays(7 * t);
+                foreach (StudentModel student in this.GetStudentsByClass("IC"))
+                {
+                    PresenceModel pre = new PresenceModel(student, table.Subject, d, null);
+
+                    int prob = gen.Next(100);
+                    if (prob < 80)
+                        pre.Present = true;
+                    else
+                        pre.Present = false;
+                    this.presences.Add(pre);
+                }
+            }
+
+
         }
 
 
         public List<ClassModel> GetAllClasses()
-        {           
+        {
             return this.classes.ToList();
         }
         public List<SubjectModel> GetAllSubjects()
-        {         
+        {
             return this.subjects.ToList();
         }
 
@@ -798,13 +798,13 @@ namespace LibrusWP.Logic
                 .Select(x => x.Subject)
                 .ToList();
         }
-        
+
 
         public IList<StudentModel> GetStudentsByClass(string id)
         {
-            return this.students.Where(x=> x.Class.Id==id).OrderBy(x => x.FullName).ToList();
+            return this.students.Where(x => x.Class.Id == id).OrderBy(x => x.FullName).ToList();
         }
-       
+
         public IList<PresenceModel> GetPresencesByStudentAndSubject(int studentId, string SubjectId)
         {
             return this.presences.Where(x => x.Student.StudentId == studentId && x.Subject.Id == SubjectId).ToList();
@@ -819,21 +819,32 @@ namespace LibrusWP.Logic
         //    return this.timeTable.Where(x => x.Subject.Id == subjectModel.Id && x.Class.Id == classModel.Id).ToList();
         //}
 
-
-        public async Task SavePresences(IList<PresenceModel> list)
+        public void SavePresences(IList<PresenceModel> list)
         {
-            await Task.Run(() =>
+
+            foreach (PresenceModel c in list)
             {
-                foreach (PresenceModel c in list)
+                if (this.presences.Where(x => x.Date.Date == c.Date.Date && x.Subject.Id == c.Subject.Id && x.Student.FullName == c.Student.FullName).FirstOrDefault() == null)
                 {
-                    if (this.presences.Where(x => x.Date.Date == c.Date.Date && x.Subject.Id == c.Subject.Id && x.Student.FullName == c.Student.FullName).FirstOrDefault() == null)
-                    {
-                        this.presences.Add(c);
-                    }
+                    this.presences.Add(c);
                 }
-                return;
-            });
+            }
+
         }
+        //public async Task SavePresences(IList<PresenceModel> list)
+        //{
+        //    await Task.Run(() =>
+        //    {
+        //        foreach (PresenceModel c in list)
+        //        {
+        //            if (this.presences.Where(x => x.Date.Date == c.Date.Date && x.Subject.Id == c.Subject.Id && x.Student.FullName == c.Student.FullName).FirstOrDefault() == null)
+        //            {
+        //                this.presences.Add(c);
+        //            }
+        //        }
+        //        return;
+        //    });
+        //}
 
 
         public IList<PresenceModel> GetPresencesByStudentsSubjectDate(IList<StudentModel> students, SubjectModel subjectModel, DateTime dateTime)
@@ -857,7 +868,7 @@ namespace LibrusWP.Logic
 
         public TimeTableModel GetTimeTable(ClassModel clazz, SubjectModel subject)
         {
-           return this.timeTables.Where(x => x.Class.Id == clazz.Id && x.Subject.Id == subject.Id).FirstOrDefault();
+            return this.timeTables.Where(x => x.Class.Id == clazz.Id && x.Subject.Id == subject.Id).FirstOrDefault();
         }
 
 
