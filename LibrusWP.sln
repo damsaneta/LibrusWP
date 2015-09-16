@@ -5,8 +5,6 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibrusWP", "LibrusWP\LibrusWP.csproj", "{2C658B1D-CA96-4156-B9C0-8CD0F89BA293}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibrusWP.Tests", "LibrusWP.Tests\LibrusWP.Tests.csproj", "{B3CDE423-9FD9-4631-BA48-66910C9BEB2D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibrusWP.UnitTestsWP", "LibrusWP.UnitTestsWP\LibrusWP.UnitTestsWP.csproj", "{F38DF1AC-E7B4-4E24-9376-D151580EE36C}"
 EndProject
 Global
@@ -45,18 +43,6 @@ Global
 		{2C658B1D-CA96-4156-B9C0-8CD0F89BA293}.Release|x86.ActiveCfg = Release|x86
 		{2C658B1D-CA96-4156-B9C0-8CD0F89BA293}.Release|x86.Build.0 = Release|x86
 		{2C658B1D-CA96-4156-B9C0-8CD0F89BA293}.Release|x86.Deploy.0 = Release|x86
-		{B3CDE423-9FD9-4631-BA48-66910C9BEB2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B3CDE423-9FD9-4631-BA48-66910C9BEB2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B3CDE423-9FD9-4631-BA48-66910C9BEB2D}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{B3CDE423-9FD9-4631-BA48-66910C9BEB2D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{B3CDE423-9FD9-4631-BA48-66910C9BEB2D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{B3CDE423-9FD9-4631-BA48-66910C9BEB2D}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{B3CDE423-9FD9-4631-BA48-66910C9BEB2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B3CDE423-9FD9-4631-BA48-66910C9BEB2D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B3CDE423-9FD9-4631-BA48-66910C9BEB2D}.Release|ARM.ActiveCfg = Release|Any CPU
-		{B3CDE423-9FD9-4631-BA48-66910C9BEB2D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{B3CDE423-9FD9-4631-BA48-66910C9BEB2D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{B3CDE423-9FD9-4631-BA48-66910C9BEB2D}.Release|x86.ActiveCfg = Release|Any CPU
 		{F38DF1AC-E7B4-4E24-9376-D151580EE36C}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{F38DF1AC-E7B4-4E24-9376-D151580EE36C}.Debug|ARM.ActiveCfg = Debug|ARM
 		{F38DF1AC-E7B4-4E24-9376-D151580EE36C}.Debug|ARM.Build.0 = Debug|ARM

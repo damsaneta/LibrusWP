@@ -97,9 +97,6 @@ namespace LibrusWP.Logic
             if (!DataContext.DatabaseExists())
             {
                 DataContext.CreateDatabase();
-
-
-
                 var fakeManager = GetFakeManager();
                 var manager = GetManager();
                 var classes = fakeManager.GetAllClasses();
@@ -131,7 +128,6 @@ namespace LibrusWP.Logic
                 {
                     presenceRepository.AddNew(new PresenceEntity(studentRepository.GetById(presence.Student.StudentId),subjectRepository.GetById(presence.Subject.Id),presence.Date.Date,presence.Present));
                 }
- 
            
             }
         }

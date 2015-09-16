@@ -40,7 +40,6 @@ namespace LibrusWP.DataAccess
             return this.context.Presences.Where(x => x.Student.Id == studentId && x.Subject.Id == subjectId && x.Date.Date == date.Date).SingleOrDefault();
         }
 
-
         public PresenceEntity GetById(int id)
         {
             return this.context.Presences.Where(x => x.Id == id).SingleOrDefault();

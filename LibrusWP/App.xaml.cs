@@ -100,17 +100,13 @@ namespace LibrusWP
             //}
             if (e.IsApplicationInstancePreserved)
             {
-                var t=0;
-                if(1==1)
-                {
-                    t = 1;
-                }
+                
                 // Dormant - objects in memory intact
             }
             else
             {
                
-                string t ="hjhj";
+                
                 // Tombstoned - need to reload
             }
         }

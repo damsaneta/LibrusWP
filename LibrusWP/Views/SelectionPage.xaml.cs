@@ -15,9 +15,12 @@ namespace LibrusWP.Views
 {
     public partial class SelectionPage : PhoneApplicationPage
     {
+
+        private  readonly ILibrusManager manager;
         public SelectionPage()
         {
             InitializeComponent();
+            this.manager = LibrusFactory.CreateLibrusManager();
             this.DataContext = new SelectionPageViewModel(LibrusFactory.CreateLibrusManager());
         }
 
@@ -78,5 +81,7 @@ namespace LibrusWP.Views
         {
             this.pivot.SelectedIndex = 2;
         }
+
+       
     }
 }

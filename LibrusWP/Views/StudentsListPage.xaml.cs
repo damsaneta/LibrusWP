@@ -38,5 +38,11 @@ namespace LibrusWP.Views
                 NavigationService.Navigate(new Uri("/Views/InformationAboutPresences.xaml?ID=" +id, UriKind.Relative));
             }
         }
+
+        private void ApplicationBarIconButton_Click(object sender, EventArgs e)
+        {
+            string clazz = this.ViewModel.Class.Id;
+            NavigationService.Navigate(new Uri("/Views/AddNewUserPage.xaml?class=" +clazz, UriKind.Relative));
+        }
     }
 }

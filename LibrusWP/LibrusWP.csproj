@@ -138,6 +138,9 @@
     <Compile Include="ViewModels\PresencePageViewModel.cs" />
     <Compile Include="ViewModels\SelectionPageViewModel.cs" />
     <Compile Include="ViewModels\StudentsListPageViewModel.cs" />
+    <Compile Include="Views\AddNewUserPage.xaml.cs">
+      <DependentUpon>AddNewUserPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CallendarPage.xaml.cs">
       <DependentUpon>CallendarPage.xaml</DependentUpon>
     </Compile>
@@ -171,14 +174,18 @@
     <DesignData Include="SampleData\StudentsListPageViewModelSampleData.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
     </DesignData>
-    <Page Include="MainPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <DesignData Include="SampleData\MainViewModelSampleData.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </DesignData>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddNewUserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CallendarPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -210,6 +217,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\AlignmentGrid.png" />
+    <Content Include="Assets\appBar\add.png" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -29,7 +29,6 @@ namespace LibrusWP.DataAccess
             return this.context.TimeTables.Where(x => x.Class.Id == clazzId).ToList();
         }
 
-
         public void AddNew(TimeTableEntity model)
         {
             this.context.TimeTables.InsertOnSubmit(model);

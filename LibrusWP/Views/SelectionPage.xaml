@@ -13,7 +13,7 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    SupportedOrientations="PortraitOrLandscape"  Orientation="Portrait"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="True"
     >
     <toolkit:TransitionService.NavigationInTransition>
@@ -36,6 +36,9 @@
             </toolkit:NavigationOutTransition.Forward>
         </toolkit:NavigationOutTransition>
     </toolkit:TransitionService.NavigationOutTransition>
+    
+  
+    
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <phone:Pivot x:Name="pivot" Title="LIBRUS" >
@@ -55,6 +58,7 @@
 
             </phone:PivotItem>
             <phone:PivotItem Header="przedmioty" Name="subjectsPivotItem">
+                
                 <ListBox x:Name="subjectsListBox" Margin="0,0,0,12" ItemsSource="{Binding Path =Subjects}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
